@@ -5,9 +5,8 @@ import Footer from './Footer';
 const Layout = () => {
   return (
     <div >
-      <Header />
-      
-      {/* Outlet = là où s'affichent les pages */}
+      <Header />    
+     
       <main className="flex-grow">
         <Outlet />
       </main>

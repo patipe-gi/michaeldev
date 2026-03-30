@@ -1,0 +1,221 @@
+/* Button.css - Adapté au design du projet */
+:root {
+  /* --- COULEURS DU PROJET (extraites de image_6.png) --- */
+
+  /* Thème Principal (Sarcelle/Teal de la section Front-End) */
+  --project-teal: #18c5a4; /* Couleur vive principale */
+  --project-teal-dark: #12a386; /* Pour le survol (hover) */
+  --project-teal-light: #16b58f; /* Une variante plus émeraude si nécessaire */
+
+  /* Thème Secondaire (Violet/Purple de la section Back-End) */
+  --project-purple: #9747ff; /* Couleur vive principale */
+  --project-purple-dark: #7c3ae3; /* Pour le survol (hover) */
+
+  /* Neutres Dark Mode */
+  --project-bg: #131418; /* Fond ultra sombre de l'infographie */
+  --project-dark: #1e1f24; /* Un peu plus clair, pour les conteneurs */
+  --project-light-gray: #33343a; /* Pour les bordures subtiles */
+  --project-white: #ffffff; /* Texte */
+
+  /* Couleurs de Status (adaptées au dark mode) */
+  --success: #16b58f; /* Identique au teal-light, car c'est déjà vert */
+  --danger: #ef4444; /* Rouge standard (conserver) */
+  --warning: #f59e0b; /* Ambre standard (conserver) */
+  --info: #3b82f6; /* Bleu standard (conserver) */
+
+  /* --- STYLES --- */
+
+  /* Ombres portées */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.2);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3); /* Plus sombre pour le dark mode */
+
+  /* Transitions */
+  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); /* Légèrement plus rapide pour la réactivité */
+}
+
+/* --- Base Button --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  font-family: inherit;
+  border: none;
+  /* Bords légèrement arrondis, similaires aux étiquettes 'Front-End' de l'image */
+  border-radius: 4px; /* Style pilule, comme dans l'infographie */
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Effet de ripple (conserver, c'est bon pour l'UX) */
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn:active::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* --- Variantes de Couleur --- */
+
+/* Variantes basées sur le FRONT-END (Teal) */
+.btn-primary {
+  background: var(--project-teal);
+  color: var(--project-white);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--project-teal-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Variantes basées sur le BACK-END (Purple) */
+.btn-secondary {
+  background: var(--project-purple);
+  color: var(--project-white);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: var(--project-purple-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Bouton Outline (version Teal) */
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--project-teal);
+  color: var(--project-teal);
+}
+
+.btn-outline:hover:not(:disabled) {
+  background: var(--project-teal);
+  color: var(--project-white);
+  transform: translateY(-2px);
+}
+
+/* Bouton Ghost (version Teal) */
+.btn-ghost {
+  background: transparent;
+  color: var(--project-teal);
+}
+
+.btn-ghost:hover:not(:disabled) {
+  background: rgba(24, 197, 164, 0.1); /* Teal transparent */
+  transform: translateY(-2px);
+}
+
+/* Boutons de Statut (adaptés) */
+.btn-success {
+  background: var(--success);
+  color: var(--project-white);
+}
+
+.btn-danger {
+  background: var(--danger);
+  color: var(--project-white);
+}
+
+.btn-warning {
+  background: var(--warning);
+  color: var(--project-bg); /* Texte sombre sur fond jaune pour la lisibilité */
+}
+
+/* --- Tailles --- */
+.btn-small {
+  padding: 0.5rem 1.25rem; /* Ajusté pour le style pilule */
+  font-size: 0.875rem; /* 14px */
+  gap: 0.375rem;
+}
+
+.btn-medium {
+  padding: 0.75rem 1.75rem; /* Ajusté pour le style pilule */
+  font-size: 1rem; /* 16px */
+  gap: 0.5rem;
+}
+
+.btn-large {
+  padding: 1rem 2.5rem; /* Ajusté pour le style pilule */
+  font-size: 1.125rem; /* 18px */
+  gap: 0.75rem;
+}
+
+/* Full Width */
+.btn-full-width {
+  width: 100%;
+}
+
+/* Disabled */
+.btn-disabled, .btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Icon Styles */
+.btn-icon-only {
+  border-radius: 50%; /* Bouton icône parfaitement rond */
+  padding: 0.75rem;
+}
+
+.btn-icon {
+  font-size: 1.2em;
+}
+
+/* Loading State */
+.btn-loading {
+  position: relative;
+  color: transparent !important;
+}
+
+.btn-loading::before {
+  content: '';
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .btn-small {
+    padding: 0.4rem 1rem;
+    font-size: 0.8125rem;
+  }
+  
+  .btn-medium {
+    padding: 0.625rem 1.5rem;
+    font-size: 0.9375rem;
+  }
+  
+  .btn-large {
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
+  }
+}
