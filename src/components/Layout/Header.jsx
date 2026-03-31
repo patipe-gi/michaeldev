@@ -22,7 +22,6 @@ const Header = ( ) => {
        
           <NavLink 
             to="/about"
-            style={{width:"120px"}}
           >
           About me
 

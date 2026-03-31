@@ -21,7 +21,7 @@ function Home() {
             PATIPE <span className="name">MICHAEL</span>
           </h2>
           <h3>
-            FULL STACT DEVELOPER | CRAETING INNOVATIVE GIGITAL SOLUTINS FROM TO
+            FULL STACK DEVELOPER | CREATING INNOVATIVE DIGITAL SOLUTIONS FROM TO
             BACK
           </h3>
           <p>Building robust application with Modern Technologies & Design</p>
@@ -30,7 +30,7 @@ function Home() {
             <Button size="small">
               <a href="">Explore My Project</a>
             </Button>{" "}
-            <Button className="btn btn-outline" size="small">Download CV</Button>
+            <Button className=" btn-outline" size="small">Download CV</Button>
           </div>
         </div>
         <div className="skill">
@@ -40,12 +40,12 @@ function Home() {
       <div className="section">
         <h2>My Tech Stack</h2>
         <div className="tech">
-            <img src={html} alt="html" className="stack_image" width={100} height={100}/>
-            <img src={css} alt="css" className="stack_image" width={100} height={100}/>
-            <img src={react} alt="react" className="stack_image" width={100} height={100} />
-            <img src={nodejs} alt="nodejs" className="stack_image" width={100} height={100}/>
-            <img src={nodejs} alt="nodejs" className="stack_image" width={100} height={100}/>
-            <img src={nodejs} alt="nodejs" className="stack_image" width={100} height={100}/>
+            <img src={html} alt="html" className="stack_image" />
+            <img src={css} alt="css" className="stack_image" />
+            <img src={react} alt="react" className="stack_image"  />
+            <img src={nodejs} alt="nodejs" className="stack_image" />
+            <img src={nodejs} alt="nodejs" className="stack_image" />
+            <img src={nodejs} alt="nodejs" className="stack_image" />
         </div>
       </div>
       <div className="section">

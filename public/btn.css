@@ -15,7 +15,7 @@
   --project-bg: #131418; /* Fond ultra sombre de l'infographie */
   --project-dark: #1e1f24; /* Un peu plus clair, pour les conteneurs */
   --project-light-gray: #33343a; /* Pour les bordures subtiles */
-  --project-white: #ffffff; /* Texte */
+  --project-white: #1e1f24; /* Texte */
 
   /* Couleurs de Status (adaptées au dark mode) */
   --success: #16b58f; /* Identique au teal-light, car c'est déjà vert */
@@ -44,7 +44,7 @@
   font-family: inherit;
   border: none;
   /* Bords légèrement arrondis, similaires aux étiquettes 'Front-End' de l'image */
-  border-radius: 4px; /* Style pilule, comme dans l'infographie */
+  border-radius: 6px; /* Style pilule, comme dans l'infographie */
   cursor: pointer;
   transition: var(--transition);
   position: relative;
