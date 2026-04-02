@@ -297,6 +297,10 @@ a {
 .card_img {
   height: 13rem;
   width: 17rem;
+  border-radius: 0.5rem ;
+   object-fit: cover; /* Important : l'image couvre toute la zone sans se déformer */
+  display: block; 
+  
 }
 .card_items {
   width: 17rem;
@@ -306,11 +310,15 @@ a {
   position: relative;
   background-clip: padding-box;
 }
+.card_description{
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
 .card_items::before {
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: 0.5rem;
+  border-radius: 0.7rem;
   padding: 1px;
   background: linear-gradient(135deg, #18c5a4, #9747ff);
   -webkit-mask:

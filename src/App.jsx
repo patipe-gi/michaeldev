@@ -7,6 +7,7 @@ import NotFound from './pages/NotFound';
 import About from './pages/about';
 import Contact from './pages/conatct';
 import Layout from './components/Layout/Layout';
+import Projects from './pages/Projects';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />        
           <Route path="*" element={<NotFound />} />
