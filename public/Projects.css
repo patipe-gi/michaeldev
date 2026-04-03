@@ -213,6 +213,7 @@
 .projects-section {
   container-type: inline-size;
   container-name: projects;
+  margin-top: 30px;
 }
 
 .projects-grid {
