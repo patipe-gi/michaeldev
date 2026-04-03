@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import NotFound from './pages/NotFound.jsx';
 
 import About from './pages/About.jsx';
+
 import Contact from './pages/Conatct.jsx';
 import Layout from './components/Layout/Layout.jsx';
 import Projects from './pages/Projects.jsx';
