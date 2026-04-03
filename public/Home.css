@@ -157,7 +157,6 @@
 }
 
 
-
 .projects-section h2 {
   font-size: 2rem;
   text-align: center;
@@ -356,7 +355,7 @@
   }
   
   .projects-section {
-    padding-top: 60px;
+    padding: 0.5rem 0;
   }
   
   .projects-section h2 {
