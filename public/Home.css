@@ -52,16 +52,16 @@
   color: white;
 }
 
-.intro div:nth-child(2) h2 .name {
+/* .intro div:nth-child(2) h2 .name {
   background: linear-gradient(135deg, #18c5a4, #9747ff);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-}
+} */
 
 .intro div:nth-child(2) h3 {
   font-size: 1rem;
-  color: #18c5a4;
+  /* color: #18c5a4; */
   margin-bottom: 1rem;
   letter-spacing: 1px;
 }
@@ -97,10 +97,12 @@
 .section h2 {
   font-size: 2rem;
   margin-bottom: 1.5rem;
-  background: linear-gradient(135deg, #18c5a4, #9747ff);
+  /* background: linear-gradient(135deg, #18c5a4, #9747ff); */
   -webkit-background-clip: text;
   background-clip: text;
-  color: transparent;
+  /* color: transparent; */
+  color: white;
+
 }
 
 /* Tech Stack container */
@@ -163,10 +165,11 @@
   font-size: 2rem;
   text-align: center;
   margin-bottom: 0.5rem;
-  background: linear-gradient(135deg, #18c5a4, #9747ff);
+  /* background: linear-gradient(135deg, #18c5a4, #9747ff); */
   -webkit-background-clip: text;
   background-clip: text;
-  color: transparent;
+  /* color: transparent; */
+  color: white;
 }
 
 .projects-section > p {
@@ -198,30 +201,21 @@
 
 /* Écran moyen (Tablette) */
 @media (max-width: 992px) {
-  .intro {
-    flex-direction: column;
-    text-align: center;
-    gap: 2rem;
-  }
-  
-  .intro div:nth-child(2) {
-    text-align: center;
-  }
-  
-  .intro div:nth-child(2) > div {
-    justify-content: center;
-  }
-  
   .skill {
     justify-content: center;
   }
   
+  .intro div:nth-child(2) h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
   .intro div:first-child .prof-image {
     max-width: 320px;
   }
   
   .skill .prof-image {
-    max-width: 250px;
+    max-width: 327px;
   }
   
   .tech {
@@ -238,6 +232,20 @@
 
 /* Tablette (petite) */
 @media (max-width: 768px) {
+   .intro {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+   .intro div:nth-child(2) {
+    text-align: center;
+  }
+  .intro div:nth-child(2) > div {
+    justify-content: center;
+  }
+   .skill .prof-image {
+    display: none;
+  }
   .container {
     padding: 0 1rem;
   }
@@ -259,7 +267,7 @@
   }
   
   .prof-image {
-    max-width: 200px;
+    max-width: 300px;
   }
   
   .section h2 {

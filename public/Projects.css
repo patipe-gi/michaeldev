@@ -227,9 +227,9 @@
   }
 }
 
-@container projects (max-width: 900px) {
+@container projects (max-width: 992px) {
   .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -387,7 +387,7 @@
 /* ============ RESPONSIVE ============ */
 
 /* Tablette - 2 colonnes */
-@container projects (max-width: 900px) {
+@container projects (max-width: 992px) {
   .project-card {
     flex-direction: column; /* Retour en colonne sur tablette */
   }
@@ -407,31 +407,23 @@
 }
 
 
-
-
-/* Très petit mobile */
-@media (max-width: 480px) {
-  .projects-section {
-    padding: 0.5rem;
-  }
-  
-  .projects-grid {
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 1rem;
-  }
-  
-  .project-card {
-    flex-direction: row;
-    flex-direction: column;
-  }
-  
-  .project-image {
-    width: 100%;
-  }
-  
+@media (max-width: 768px) {
   .project-header {
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+}
+
+/* ✅ Écrans très petits (moins de 480px) : on garde 2 colonnes */
+@media (max-width: 480px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr); /* ✅ FORCÉ à 2 colonnes */
+    gap: 0.75rem; /* Espace plus petit pour économiser de la place */
+  }
+  
+  .project-info {
+    padding: 0.75rem;
   }
   
   .project-header h4 {
@@ -440,24 +432,43 @@
   
   .project-year {
     font-size: 0.6rem;
+    padding: 0.15rem 0.4rem;
+  }
+  
+  .project-description {
+    font-size: 0.7rem;
+    -webkit-line-clamp: 2; /* 2 lignes max pour gagner de la place */
+    margin-bottom: 0.75rem;
+  }
+  
+  .tag {
+    font-size: 0.6rem;
+    padding: 0.2rem 0.4rem;
+  }
+  
+  .project-links button {
+    font-size: 0.65rem;
+    padding: 0.3rem 0.5rem;
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* ✅ Pour les écrans EXTRA petits (moins de 360px) */
+@media (max-width: 360px) {
+  .projects-grid {
+    gap: 0.5rem; /* Espace encore plus petit */
+  }
+  
+  .project-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+  
+  .project-header h4 {
+    font-size: 0.8rem;
+  }
+  
+  .tag {
+    font-size: 0.55rem;
+  }
+}

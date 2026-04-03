@@ -29,12 +29,6 @@
   color: white;
 }
 
-/* .contact_dec h2 .name {
-  background: linear-gradient(135deg, #18c5a4, #9747ff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-} */
 
 .contact_dec p {
   color: #c0c0c0;
@@ -42,7 +36,7 @@
   line-height: 1.5;
 }
 
-/* Container principal du formulaire et contacts */
+
 .contact_form {
   display: flex;
   justify-content: center;
@@ -51,7 +45,7 @@
   width: 100%;
 }
 
-/* Cartes de contact (Direct Contact et Social) */
+
 .d_contact {
   width: 280px;
   height: 200px;
@@ -104,7 +98,7 @@
   font-size: 1.1rem;
 }
 
-/* Formulaire */
+
 .form {
   border-radius: 0.5rem;
   position: relative;
@@ -117,7 +111,7 @@
   background: linear-gradient(135deg, #19212e, #171f2b);
 }
 
-/* Bordure dégradée */
+
 .form::before {
   content: "";
   position: absolute;
@@ -132,7 +126,7 @@
   pointer-events: none;
 }
 
-/* Container des champs nom et email */
+
 .form > div:first-of-type {
   display: flex;
   gap: 1rem;
@@ -234,94 +228,6 @@
   }
 }
 
-/* Mobile */
-@media (max-width: 640px) {
-  .contact {
-    padding: 5rem 1rem 1.5rem 1rem;
-  }
-  
-  .contact_dec h2 {
-    font-size: 1.5rem;
-  }
-  
-  .contact_dec p {
-    font-size: 0.85rem;
-  }
-  
-  /* Formulaire en colonne sur mobile */
-  .form > div:first-of-type {
-    flex-direction: column;
-    gap: 0;
-  }
-  
-  .form {
-    padding: 1.25rem;
-  }
-  
-  .form input {
-    height: 2.25rem;
-    font-size: 0.85rem;
-  }
-  
-  .form textarea {
-    height: 5rem;
-    font-size: 0.85rem;
-  }
-  
-  .form label {
-    font-size: 0.8rem;
-  }
-  
-  .d_contact {
-    padding: 1.25rem;
-  }
-  
-  .d_contact h3 {
-    font-size: 1rem;
-  }
-  
-  .d_contact p {
-    font-size: 0.85rem;
-    margin: 0.6rem 0;
-  }
-  
-  .d_contact .icon {
-    font-size: 1rem;
-  }
-}
-
-/* Très petit mobile */
-@media (max-width: 480px) {
-  .contact_dec h2 {
-    font-size: 1.25rem;
-  }
-  
-  .contact_dec p {
-    font-size: 0.8rem;
-  }
-  
-  .form {
-    padding: 1rem;
-  }
-  
-  .form input,
-  .form textarea {
-    padding: 0.4rem 0.6rem;
-  }
-  
-  .d_contact {
-    padding: 1rem;
-  }
-  
-  .d_contact p {
-    font-size: 0.8rem;
-    gap: 0.5rem;
-  }
-  
-  .contact_form {
-    gap: 1rem;
-  }
-}
 
 /* Support pour les écrans très larges */
 @media (min-width: 1600px) {

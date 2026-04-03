@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const FilterSection = ({ onFilterChange, projects }) => {
+const FilterSection = ({ onFilterChange }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filters, setFilters] = useState({
     date: '',
