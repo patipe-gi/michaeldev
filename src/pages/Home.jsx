@@ -1,5 +1,3 @@
-// Home.jsx
-import Header from "../components/Layout/Header";
 import Button from "../components/Button";
 import { projects } from "../data/project";
 import { Link } from "react-router-dom";
