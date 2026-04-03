@@ -4,7 +4,6 @@ import Button from "../components/Button";
 import { projects } from "../data/project";
 import { Link } from "react-router-dom";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
-import "../../public/home.css";
 import skill from "../../public/image/Gemini_Generated_Image_gqywl6gqywl6gqyw.png";
 import prof_image from "../../public/image/Gemini_Generated_Image_srx4i4srx4i4srx4.png";
 import html from "../../public/image/html.png";
@@ -13,7 +12,6 @@ import react from "../../public/image/react.png";
 import nodejs from "../../public/image/node js.png";
 import flutter from "../../public/image/flutter.png";
 import laravel from "../../public/image/laravel.png";
-
 function Home() {
   const displayedProjects = projects.slice(0, 4);
   

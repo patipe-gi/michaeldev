@@ -4,7 +4,6 @@ import { useFilterProjects } from '../hooks/useFilterProjects';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import { projects } from '../data/project';
 import Button from '../components/Button';
-import "../../public/projects.css"
 
 const Projects = () => {
   const { filteredProjects, setFilters } = useFilterProjects(projects);

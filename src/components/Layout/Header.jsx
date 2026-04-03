@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from './../../../public/image/d803a9baf2cafb7c064c4030b74971a7.png';
 import Button from '../Button';
-import '../../../public/header.css';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

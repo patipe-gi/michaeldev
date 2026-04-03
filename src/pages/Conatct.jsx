@@ -1,7 +1,6 @@
 // Contact.jsx
 import Button from "../components/Button";
 import { FaAt, FaGithub, FaLinkedin, FaWhatsapp, FaMap } from "react-icons/fa";
-import "../../public/contact.css";
 
 function Contact() {
   return (
