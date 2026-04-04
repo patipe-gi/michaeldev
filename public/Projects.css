@@ -416,13 +416,17 @@
   }
 }
 
-/* ✅ Écrans très petits (moins de 480px) : on garde 2 colonnes */
+
 @media (max-width: 480px) {
   .projects-grid {
-    grid-template-columns: repeat(2, 1fr); /* ✅ FORCÉ à 2 colonnes */
-    gap: 0.75rem; /* Espace plus petit pour économiser de la place */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 0.75rem; 
   }
-  
+  .project-header {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
   .project-info {
     padding: 0.75rem;
   }
@@ -453,14 +457,16 @@
   }
 }
 
-/* ✅ Pour les écrans EXTRA petits (moins de 360px) */
+/*Pour les écrans EXTRA petits (moins de 360px) */
 @media (max-width: 360px) {
+ 
   .projects-grid {
-    gap: 0.5rem; /* Espace encore plus petit */
+    grid-template-columns: repeat(1, 1fr); 
+    gap: 0.5rem; 
   }
   
   .project-header {
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
     gap: 0.25rem;
   }
