@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Button from '../Button';
 
 
+
 const CVDownload = ({ className = "" }) => {
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -22,11 +23,13 @@ const CVDownload = ({ className = "" }) => {
     setError(null);
     
     const cvFiles = {
-      french: '/cv/cv_michael_patipe_fr.pdf',
-      english: '/cv/cv_michael_patipe_en.pdf'
+      french: 'public/cv/cv_michael_patipe_fr.pdf',
+      english: 'public/cv/cv_michael_patipe_en.pdf'
     };
     
     const url = cvFiles[language];
+    console.log(url);
+    
     
     // Vérifier si le fichier existe
     const exists = await checkFileExists(url);
