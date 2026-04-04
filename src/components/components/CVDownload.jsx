@@ -23,8 +23,8 @@ const CVDownload = ({ className = "" }) => {
     setError(null);
     
     const cvFiles = {
-      french: 'public/cv/cv_michael_patipe_fr.pdf',
-      english: 'public/cv/cv_michael_patipe_en.pdf'
+      french: '/cv/cv_michael_patipe_fr.pdf',
+      english: '/cv/cv_michael_patipe_en.pdf'
     };
     
     const url = cvFiles[language];
