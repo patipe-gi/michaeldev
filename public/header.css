@@ -8,7 +8,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid rgba(30, 43, 61, 0.5);
+  border-bottom: 2px solid rgba(33, 57, 90, 0.5);
   padding: 0 5%;
   background: rgba(28, 32, 44, 0.95);
   backdrop-filter: blur(10px);
