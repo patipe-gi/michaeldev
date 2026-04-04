@@ -51,7 +51,7 @@ const CVDownload = ({ className = "" }) => {
       document.body.removeChild(link);
       
       // Succès - Remplacer le toast de chargement par un succès
-      toast.success('CV téléchargé avec succès !', { id: loadingToast });
+      toast.success('CV téléchargé  lancé  !', { id: loadingToast });
       setShowModal(false);
       
     } catch (err) {

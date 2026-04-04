@@ -207,6 +207,10 @@
     flex-direction: column;
     align-items: center;
   }
+    .contact {
+    
+    padding: 3rem 2rem 2rem 2rem;
+  }
   
   .d_contact {
     width: 100%;
