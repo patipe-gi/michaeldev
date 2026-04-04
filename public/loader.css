@@ -1,0 +1,115 @@
+/* Loader.css */
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #19212e, #171f2b);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+/* Style 1 : Loader avec bordure dégradée (recommandé) */
+.loader {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  position: relative;
+  animation: spin 1s linear infinite;
+}
+
+.loader::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #18c5a4, #9747ff);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  padding: 3px;
+}
+
+/* Animation de rotation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Style 2 : Loader alternatif (plus simple) - Décommentez pour l'utiliser */
+/*
+.loader {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 3px solid rgba(24, 197, 164, 0.2);
+  border-top: 3px solid #18c5a4;
+  border-right: 3px solid #9747ff;
+  animation: spin 1s linear infinite;
+}
+*/
+
+/* Style 3 : Loader avec points (alternative) */
+/*
+.loader {
+  display: flex;
+  gap: 12px;
+}
+
+.loader::before,
+.loader::after,
+.loader {
+  content: '';
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #18c5a4;
+  animation: bounce 0.6s ease-in-out infinite alternate;
+}
+
+.loader::before {
+  background: #9747ff;
+  animation-delay: 0.2s;
+}
+
+.loader::after {
+  background: #18c5a4;
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  to {
+    transform: translateY(-20px);
+    opacity: 1;
+  }
+}
+*/
+
+/* Responsive pour petits écrans */
+@media (max-width: 640px) {
+  .loader {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .loader {
+    width: 40px;
+    height: 40px;
+  }
+}

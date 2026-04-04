@@ -3,10 +3,12 @@ import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from './../../../public/image/d803a9baf2cafb7c064c4030b74971a7.png';
 import Button from '../Button';
+import Loader from '../Loader';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [navigating, setNavigating] = useState(false);
 
   // Gestion du scroll pour l'effet de header
   useEffect(() => {
@@ -19,7 +21,13 @@ const Header = () => {
 
   // Fermer le menu quand on clique sur un lien
   const handleLinkClick = () => {
-    setIsMenuOpen(false);
+    setNavigating(true);
+    setTimeout(() => {
+      setIsMenuOpen(false);
+      setNavigating(false);
+       
+    }, 300);
+   
   };
 
   // Empêcher le scroll du body quand le menu est ouvert
@@ -33,6 +41,10 @@ const Header = () => {
       document.body.style.overflow = 'unset';
     };
   }, [isMenuOpen]);
+
+   if (navigating) {
+    return <Loader />;
+  }
 
   return (
     <>

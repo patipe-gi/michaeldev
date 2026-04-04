@@ -1,13 +1,12 @@
-// CVDownload.jsx - Version complète avec vérification
 import React, { useState } from 'react';
-import Button from '../Button';
-
-
+import toast from 'react-hot-toast'; // Importer toast
+import Button from './Button';
+import Loader from './Loader'; 
 
 const CVDownload = ({ className = "" }) => {
   const [showModal, setShowModal] = useState(false);
-  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [downloadLoading, setDownloadLoading] = useState(false);
 
   const checkFileExists = async (url) => {
     try {
@@ -19,8 +18,11 @@ const CVDownload = ({ className = "" }) => {
   };
 
   const handleDownload = async (language) => {
-    setLoading(true);
+    setDownloadLoading(true); 
     setError(null);
+    
+    // Afficher un toast de chargement
+    const loadingToast = toast.loading('Préparation du téléchargement...');
     
     const cvFiles = {
       french: '/cv/cv_michael_patipe_fr.pdf',
@@ -28,29 +30,44 @@ const CVDownload = ({ className = "" }) => {
     };
     
     const url = cvFiles[language];
-    console.log(url);
+    console.log('Tentative de téléchargement depuis:', url);
     
-    
-    // Vérifier si le fichier existe
-    const exists = await checkFileExists(url);
-    
-    if (!exists) {
-      setError(`Le fichier CV ${language === 'french' ? 'français' : 'anglais'} n'existe pas.`);
-      setLoading(false);
-      return;
+    try {
+      const exists = await checkFileExists(url);
+      
+      if (!exists) {
+        throw new Error(`Le fichier CV ${language === 'french' ? 'français' : 'anglais'} n'existe pas.`);
+      }
+      
+      // Simuler un petit délai pour voir le loader
+      await new Promise(resolve => setTimeout(resolve, 800));
+      
+      // Créer le lien de téléchargement
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `CV_Michael_Patipe_${language === 'french' ? 'FR' : 'EN'}.pdf`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+      // Succès - Remplacer le toast de chargement par un succès
+      toast.success('CV téléchargé avec succès !', { id: loadingToast });
+      setShowModal(false);
+      
+    } catch (err) {
+      // Erreur - Remplacer le toast de chargement par une erreur
+      setError(err.message);
+      toast.error(err.message, { id: loadingToast, duration: 4000 });
+      
+    } finally {
+      setDownloadLoading(false);
     }
-    
-    // Créer un lien temporaire pour le téléchargement
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = `CV_Michael_Patipe_${language === 'french' ? 'FR' : 'EN'}.pdf`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    
-    setLoading(false);
-    setShowModal(false);
   };
+
+  // Afficher le loader pendant le téléchargement
+  if (downloadLoading) {
+    return <Loader />;
+  }
 
   return (
     <>
@@ -72,13 +89,12 @@ const CVDownload = ({ className = "" }) => {
             <div className="modal-body">
               {error && (
                 <div className="error-message">
-                  ⚠️{error}
+                  ⚠️ {error}
                 </div>
               )}
               <button 
                 className="language-btn english"
                 onClick={() => handleDownload('english')}
-                disabled={loading}
               >
                 <span className="flag">🇬🇧</span>
                 English Version
@@ -87,13 +103,11 @@ const CVDownload = ({ className = "" }) => {
               <button 
                 className="language-btn french"
                 onClick={() => handleDownload('french')}
-                disabled={loading}
               >
                 <span className="flag">🇫🇷</span>
                 Version Française
                 <span className="file-size">(PDF)</span>
               </button>
-              {loading && <div className="loading-spinner">Téléchargement en cours...</div>}
             </div>
           </div>
         </div>

@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import FilterSection from '../components/FilterSection';
 import { useFilterProjects } from '../hooks/useFilterProjects';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import { projects } from '../data/project';
 import Button from '../components/Button';
+import Loader from '../components/Loader';
 
 const Projects = () => {
   const { filteredProjects, setFilters } = useFilterProjects(projects);
@@ -11,6 +12,35 @@ const Projects = () => {
   const handleFilterChange = (newFilters) => {
     setFilters(newFilters);
   };
+
+
+  
+  
+ const [modifprojects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadProjects = async () => {
+      setLoading(true);
+      try {
+        // Simuler un délai réseau réaliste
+        await new Promise(resolve => setTimeout(resolve, 800));
+        
+        const data = await filteredProjects;
+        setProjects(data);
+      } catch (error) {
+        console.error('Erreur:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadProjects();
+  }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <div className="projects-section ">
@@ -29,13 +59,13 @@ const Projects = () => {
         
      
        <div className="projects-grid">
-        {filteredProjects.map((project) => (
+        {modifprojects.map((project) => (
           <div key={project.id} className="project-card">
             <div className="project-image">
               <img 
                 src={project.image} 
                 alt={project.name}
-                loading="lazy" // Lazy loading pour performance
+                loading="lazy" 
               />
             </div>
             

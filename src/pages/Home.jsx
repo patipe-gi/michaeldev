@@ -10,10 +10,37 @@ import react from "../../public/image/react.png";
 import nodejs from "../../public/image/node js.png";
 import flutter from "../../public/image/flutter.png";
 import laravel from "../../public/image/laravel.png";
-import CVDownload from "../components/components/CVDownload";
+import CVDownload from "../components/CVDownload";
+import { useEffect, useState } from "react";
+import Loader from "../components/Loader";
 function Home() {
   const displayedProjects = projects.slice(0, 4);
   
+    const [featuredProjects, setFeaturedProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+
+    const loadData = async () => {
+      try {
+        
+        await new Promise(resolve => setTimeout(resolve, 600));
+        
+        const projects = await displayedProjects;
+        setFeaturedProjects(projects);
+      } catch (error) {
+        console.error('Erreur:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadData();
+  }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
   return (
     <div className="container">
       {/* Intro Section */}
@@ -59,7 +86,7 @@ function Home() {
         <h2>Recent Projects</h2>
         <p>Some of my latest work and featured projects</p>
         <div className="projects-grid">
-          {displayedProjects.map((project) => (
+          {featuredProjects.map((project) => (
             <div key={project.id} className="project-card">
               <div className="project-image">
                 <img src={project.image} alt={project.name} />
