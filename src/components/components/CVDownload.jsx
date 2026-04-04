@@ -69,7 +69,7 @@ const CVDownload = ({ className = "" }) => {
             <div className="modal-body">
               {error && (
                 <div className="error-message">
-                  ⚠️ {error}
+                  ⚠️{error}
                 </div>
               )}
               <button 
