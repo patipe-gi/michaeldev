@@ -10,6 +10,7 @@ import react from "../../public/image/react.png";
 import nodejs from "../../public/image/node js.png";
 import flutter from "../../public/image/flutter.png";
 import laravel from "../../public/image/laravel.png";
+import CVDownload from "../components/components/CVDownload";
 function Home() {
   const displayedProjects = projects.slice(0, 4);
   
@@ -32,9 +33,7 @@ function Home() {
             <Link to="/projects">
               <Button size="medium">Explore My Project</Button>
             </Link>
-            <Button className="btn-outline" size="medium">
-              Download CV
-            </Button>
+            <CVDownload className="btn-outline" />
           </div>
         </div>
         <div className="skill">
