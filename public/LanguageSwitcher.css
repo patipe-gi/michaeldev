@@ -42,11 +42,6 @@
     color: #18c5a4;
 }
 
-.lang-btn.active .flag-icon {
-    transform: scale(1.1);
-    box-shadow: 0 0 0 2px rgba(24, 197, 164, 0.3);
-}
-
 /* Effet au survol */
 .lang-btn:hover:not(.active) {
     background: rgba(24, 197, 164, 0.1);
