@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import toast from 'react-hot-toast'; // Importer toast
+import { useTranslation } from 'react-i18next'; // Ajout de useTranslation
+import toast from 'react-hot-toast';
 import Button from './Button';
 import Loader from './Loader'; 
 
 const CVDownload = ({ className = "" }) => {
+  const { t } = useTranslation(); // Ajout du hook de traduction
   const [showModal, setShowModal] = useState(false);
   const [error, setError] = useState(null);
   const [downloadLoading, setDownloadLoading] = useState(false);
@@ -21,8 +23,8 @@ const CVDownload = ({ className = "" }) => {
     setDownloadLoading(true); 
     setError(null);
     
-    // Afficher un toast de chargement
-    const loadingToast = toast.loading('Préparation du téléchargement...');
+    // Afficher un toast de chargement avec traduction
+    const loadingToast = toast.loading(t('cv.preparing'));
     
     const cvFiles = {
       french: '/cv/cv_michael_patipe_fr.pdf',
@@ -36,7 +38,8 @@ const CVDownload = ({ className = "" }) => {
       const exists = await checkFileExists(url);
       
       if (!exists) {
-        throw new Error(`Le fichier CV ${language === 'french' ? 'français' : 'anglais'} n'existe pas.`);
+        const errorMsg = language === 'french' ? t('cv.frenchNotFound') : t('cv.englishNotFound');
+        throw new Error(errorMsg);
       }
       
       // Simuler un petit délai pour voir le loader
@@ -51,13 +54,13 @@ const CVDownload = ({ className = "" }) => {
       document.body.removeChild(link);
       
       // Succès - Remplacer le toast de chargement par un succès
-      toast.success('CV téléchargé  lancé  !', { id: loadingToast });
+      toast.success(t('cv.success'), { id: loadingToast, duration: 4000 });
       setShowModal(false);
       
     } catch (err) {
       // Erreur - Remplacer le toast de chargement par une erreur
       setError(err.message);
-      toast.error(err.message, { id: loadingToast, duration: 4000 });
+      toast.error(t('cv.error'), { id: loadingToast, duration: 3000 });
       
     } finally {
       setDownloadLoading(false);
@@ -76,14 +79,14 @@ const CVDownload = ({ className = "" }) => {
         size="medium"
         onClick={() => setShowModal(true)}
       >
-        Download CV
+        {t('cv.download')}
       </Button>
 
       {showModal && (
         <div className="modal-overlay" onClick={() => setShowModal(false)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <div className="modal-header">
-              <h3>Choose Language / Choisir la langue</h3>
+              <h3>{t('cv.chooseLanguage')}</h3>
               <button className="modal-close" onClick={() => setShowModal(false)}>×</button>
             </div>
             <div className="modal-body">
@@ -97,16 +100,16 @@ const CVDownload = ({ className = "" }) => {
                 onClick={() => handleDownload('english')}
               >
                 <span className="flag">🇬🇧</span>
-                English Version
-                <span className="file-size">(PDF)</span>
+                {t('cv.english')}
+                <span className="file-size">({t('cv.pdf')})</span>
               </button>
               <button 
                 className="language-btn french"
                 onClick={() => handleDownload('french')}
               >
                 <span className="flag">🇫🇷</span>
-                Version Française
-                <span className="file-size">(PDF)</span>
+                {t('cv.french')}
+                <span className="file-size">({t('cv.pdf')})</span>
               </button>
             </div>
           </div>

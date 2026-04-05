@@ -502,12 +502,23 @@ a {
   .log{
     margin: 0 2rem;
   }
+  .filter-label {
+  
+  font-size: 0.75rem;
+  font-weight: 200;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
   .filters-grid {
     
     grid-template-columns: repeat(2, 1fr);
   }
-   .filter-section {
-    padding: 0.5rem;
+   .filter-select {
+     font-size: 0.75rem;
+  font-weight: 200;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  width: 100%;
   }
   
   .project-header {

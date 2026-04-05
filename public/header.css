@@ -234,3 +234,77 @@
 .hd-item.open {
   animation: slideIn 0.3s ease-out;
 }
+/* Header.css - Ajoutez ceci à la fin du fichier */
+
+/* Zone droite du header (desktop) */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  z-index: 1001;
+}
+
+/* Language Switcher desktop */
+.header-right .language-switcher {
+  margin-right: 0.5rem;
+}
+
+/* Language Switcher mobile */
+.mobile-lang-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0 0.5rem 0;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(24, 197, 164, 0.2);
+}
+
+/* Ajustement de l'ordre dans le menu mobile */
+.hd-item {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Sur desktop, le menu est horizontal */
+@media (min-width: 769px) {
+  .hd-item {
+    flex-direction: row;
+  }
+  
+  .mobile-lang-wrapper {
+    display: none;
+  }
+}
+
+/* Sur mobile, cacher le header-right */
+@media (max-width: 768px) {
+  .header-right {
+    display: none;
+  }
+  
+  .mobile-lang-wrapper {
+    display: flex;
+  }
+}
+
+/* Ajustement du bouton Hire Me dans le menu mobile */
+.hd-item .mobile-hire-btn {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+/* Position du LanguageSwitcher dans le header desktop */
+@media (min-width: 769px) {
+  .header-right {
+    order: 2;
+  }
+  
+  .hd-item {
+    order: 1;
+  }
+  
+  .logo-d {
+    order: 0;
+  }
+}

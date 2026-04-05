@@ -1,24 +1,26 @@
 // Contact.jsx
+import { useTranslation } from 'react-i18next'; // Ajout de useTranslation
 import Button from "../components/Button";
 import { FaAt, FaGithub, FaLinkedin, FaWhatsapp, FaMap } from "react-icons/fa";
 
 function Contact() {
+  const { t } = useTranslation(); // Ajout du hook de traduction
+
   return (
     <div className="contact">
       <div className="contact_dec">
         <h2>
-          LET'S BUILD SOMETHING <span className="name">TOGETHER</span>
+          {t('contact.title')} <span className="name">{t('contact.together')}</span>
         </h2>
         <p>
-          You have a question, a project in mind, or just want to connect? I'd
-          be happy to hear from you — feel free to reach out anytime.
+          {t('contact.description')}
         </p>
       </div>
 
       <div className="contact_form">
         {/* Direct Contact Card */}
         <div className="d_contact">
-          <h3>Direct Contact</h3>
+          <h3>{t('contact.directContact')}</h3>
           <hr />
           <a href="https://wa.me/237675183502?text=Bonjour" target="_blank" rel="noopener noreferrer">
             <p>
@@ -47,28 +49,43 @@ function Contact() {
           <form action="" className="form">
             <div>
               <div>
-                <label htmlFor="name">Your Name</label>
-                <input type="text" id="name" placeholder="John Doe" />
+                <label htmlFor="name">{t('contact.yourName')}</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  placeholder={t('contact.placeholders.name')} 
+                />
               </div>
               <div>
-                <label htmlFor="email">Your Email</label>
-                <input type="email" id="email" placeholder="john@example.com" />
+                <label htmlFor="email">{t('contact.yourEmail')}</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  placeholder={t('contact.placeholders.email')} 
+                />
               </div>
             </div>
 
-            <label htmlFor="projectType">Project Type</label>
-            <input type="text" id="projectType" placeholder="Web App, Mobile App, etc." />
+            <label htmlFor="projectType">{t('contact.projectType')}</label>
+            <input 
+              type="text" 
+              id="projectType" 
+              placeholder={t('contact.placeholders.projectType')} 
+            />
 
-            <label htmlFor="message">Your Message</label>
-            <textarea id="message" placeholder="Tell me about your project..."></textarea>
+            <label htmlFor="message">{t('contact.yourMessage')}</label>
+            <textarea 
+              id="message" 
+              placeholder={t('contact.placeholders.message')}
+            ></textarea>
 
-            <Button size="medium">Send Message</Button>
+            <Button size="medium">{t('contact.sendMessage')}</Button>
           </form>
         </div>
 
         {/* Social Links Card */}
         <div className="d_contact">
-          <h3>Social</h3>
+          <h3>{t('contact.social')}</h3>
           <hr />
           <a href="https://www.linkedin.com/in/michael-patipe-071ba735b/" target="_blank" rel="noopener noreferrer">
             <p>

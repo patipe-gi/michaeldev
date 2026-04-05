@@ -1,0 +1,140 @@
+{
+  "navigation": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About me",
+    "skills": "Skills",
+    "contact": "Contact",
+    "hireMe": "Hire Me"
+  },
+  "cv": {
+    "download": "Download CV",
+    "chooseLanguage": "Choose Language",
+    "english": "English Version",
+    "french": "French Version",
+    "pdf": "PDF",
+    "preparing": "Preparing download...",
+    "success": "CV download started!",
+    "error": "Download failed",
+    "fileNotFound": "CV file not found",
+    "frenchNotFound": "French CV file does not exist",
+    "englishNotFound": "English CV file does not exist"
+  },
+  "filters": {
+    "searchPlaceholder": "Search by keyword...",
+    "filterBy": "Filter by",
+    "date": "Date",
+    "type": "Type",
+    "techStack": "Tech Stack",
+    "contribution": "Contribution",
+    "allDates": "All Dates",
+    "allTypes": "All Types",
+    "allTechnologies": "All Technologies",
+    "allContributions": "All Contributions",
+    "activeFilters": "Active filters:",
+    "search": "Search",
+    "year": "Year",
+    "tech": "Tech",
+    "role": "Role",
+    "clearAll": "Clear All",
+    "options": {
+      "webApp": "Web App",
+      "mobileApp": "Mobile App",
+      "ecommerce": "E-Commerce",
+      "dataVis": "Data Vis",
+      "aiMl": "AI/ML",
+      "fullStack": "Full Stack",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "uiUx": "UI/UX"
+    }
+  },
+  
+  "projects": {
+      "title": "My Projects",
+    "showing": "Showing",
+    "of": "of",
+    "projects": "projects",
+    "noResults": "No projects found matching your criteria.",
+    "clearFilters": "Clear all filters",
+    "liveDemo": "Live Demo",
+    "code": "Code",
+    "items": {
+      "ecommercePro": {
+        "name": "E-Commerce Pro",
+        "description": "Complete e-commerce platform with shopping cart, secure payment, and admin dashboard."
+      },
+      "taskflow": {
+        "name": "TaskFlow",
+        "description": "Collaborative task management application with drag & drop and real-time notifications."
+      },
+      "weatherapp": {
+        "name": "WeatherApp",
+        "description": "Weather application with 7-day forecast, interactive map, and weather alerts."
+      },
+      "portfolio3d": {
+        "name": "Portfolio 3D",
+        "description": "Interactive portfolio with 3D animations, particles, and smooth transitions."
+      },
+      "socialDashboard": {
+        "name": "SocialMedia Dashboard",
+        "description": "Social media analytics dashboard with interactive charts and data export."
+      },
+      "foodDelivery": {
+        "name": "Food Delivery App",
+        "description": "Mobile food delivery application with real-time tracking and rating system."
+      },
+      "aiImageGenerator": {
+        "name": "AI Image Generator",
+        "description": "AI-powered image generator with custom prompts and high-resolution download."
+      }
+    },
+    "categories": {
+      "ecommerce": "E-Commerce",
+      "webApp": "Web App",
+      "mobileApp": "Mobile App",
+      "dataVis": "Data Visualization",
+      "aiMl": "AI/ML"
+    },
+    "contributions": {
+      "fullStack": "Full Stack",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "uiUx": "UI/UX"
+    }
+  },
+    "contact": {
+    "title": "LET'S BUILD SOMETHING",
+    "together": "TOGETHER",
+    "description": "You have a question, a project in mind, or just want to connect? I'd be happy to hear from you — feel free to reach out anytime.",
+    "directContact": "Direct Contact",
+    "social": "Social",
+    "yourName": "Your Name",
+    "yourEmail": "Your Email",
+    "projectType": "Project Type",
+    "yourMessage": "Your Message",
+    "sendMessage": "Send Message",
+    "placeholders": {
+      "name": "John Doe",
+      "email": "john@example.com",
+      "projectType": "Web App, Mobile App, etc.",
+      "message": "Tell me about your project..."
+    }
+  }
+,
+"home": {
+    "title": "PATIPE",
+    "name": "MICHAEL",
+    "subtitle": "FULL STACK DEVELOPER | CREATING INNOVATIVE DIGITAL SOLUTIONS FROM TO BACK",
+    "description": "Building robust application with Modern Technologies & Design",
+    "exploreProjects": "Explore My Project",
+    "techStack": "My Tech Stack",
+    "recentProjects": "Recent Projects",
+    "recentProjectsDesc": "Some of my latest work and featured projects",
+    "liveDemo": "Live Demo",
+    "code": "Code"
+  }
+ 
+
+
+}

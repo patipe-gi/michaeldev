@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Loader from './components/Loader';
 import Layout from './components/Layout/Layout';
 import { Toaster } from 'react-hot-toast';
+import { LanguageProvider } from './contexts/LanguageContext';
 
 // Lazy loading des pages
 const Home = lazy(() => import('./pages/Home'));
@@ -29,6 +30,7 @@ function App() {
   }
 
   return (
+     <LanguageProvider>
     <BrowserRouter>
       <Toaster
         position="top-right"
@@ -78,6 +80,7 @@ function App() {
         </Routes>
       </Suspense>
     </BrowserRouter>
+    </LanguageProvider>
   );
 }
 

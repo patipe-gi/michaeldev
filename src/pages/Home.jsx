@@ -1,5 +1,6 @@
+import { useTranslation } from 'react-i18next';
+import { useTranslatedProjects } from '../hooks/useTranslatedProjects'; // Import du hook
 import Button from "../components/Button";
-import { projects } from "../data/project";
 import { Link } from "react-router-dom";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import skill from "../../public/image/Gemini_Generated_Image_gqywl6gqywl6gqyw.png";
@@ -13,21 +14,20 @@ import laravel from "../../public/image/laravel.png";
 import CVDownload from "../components/CVDownload";
 import { useEffect, useState } from "react";
 import Loader from "../components/Loader";
+
 function Home() {
-  const displayedProjects = projects.slice(0, 4);
-  
-    const [featuredProjects, setFeaturedProjects] = useState([]);
+  const { t } = useTranslation();
+  const { translatedProjects } = useTranslatedProjects(); // Utilisation du hook
+  const [featuredProjects, setFeaturedProjects] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-
     const loadData = async () => {
       try {
-        
         await new Promise(resolve => setTimeout(resolve, 600));
-        
-        const projects = await displayedProjects;
-        setFeaturedProjects(projects);
+        // Prendre les 4 premiers projets traduits
+        const projectsData = translatedProjects.slice(0, 4);
+        setFeaturedProjects(projectsData);
       } catch (error) {
         console.error('Erreur:', error);
       } finally {
@@ -35,12 +35,15 @@ function Home() {
       }
     };
 
-    loadData();
-  }, []);
+    if (translatedProjects.length > 0) {
+      loadData();
+    }
+  }, [translatedProjects]);
 
   if (loading) {
     return <Loader />;
   }
+
   return (
     <div className="container">
       {/* Intro Section */}
@@ -50,15 +53,13 @@ function Home() {
         </div>
         <div>
           <h2>
-            PATIPE <span className="name">MICHAEL</span>
+            {t('home.title')} <span className="name">{t('home.name')}</span>
           </h2>
-          <h3>
-            FULL STACK DEVELOPER | CREATING INNOVATIVE DIGITAL SOLUTIONS FROM TO BACK
-          </h3>
-          <p>Building robust application with Modern Technologies & Design</p>
+          <h3>{t('home.subtitle')}</h3>
+          <p>{t('home.description')}</p>
           <div>
             <Link to="/projects">
-              <Button size="medium">Explore My Project</Button>
+              <Button size="medium">{t('home.exploreProjects')}</Button>
             </Link>
             <CVDownload className="btn-outline" />
           </div>
@@ -70,7 +71,7 @@ function Home() {
 
       {/* Tech Stack Section */}
       <div className="section">
-        <h2>My Tech Stack</h2>
+        <h2>{t('home.techStack')}</h2>
         <div className="tech">
           <img src={html} alt="html" className="stack_image" />
           <img src={css} alt="css" className="stack_image" />
@@ -83,8 +84,8 @@ function Home() {
 
       {/* Recent Projects Section */}
       <div className="projects-section">
-        <h2>Recent Projects</h2>
-        <p>Some of my latest work and featured projects</p>
+        <h2>{t('home.recentProjects')}</h2>
+        <p>{t('home.recentProjectsDesc')}</p>
         <div className="projects-grid">
           {featuredProjects.map((project) => (
             <div key={project.id} className="project-card">
@@ -106,10 +107,14 @@ function Home() {
                 
                 <div className="project-links">
                   <a href={project.demoLink} target="_blank" rel="noopener noreferrer">
-                    <Button size='small'> <FaExternalLinkAlt /> Live Demo</Button>
+                    <Button size='small'> 
+                      <FaExternalLinkAlt /> {t('home.liveDemo')}
+                    </Button>
                   </a>
                   <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
-                    <Button className='btn-outline' size='small'> <FaGithub /> Code</Button>
+                    <Button className='btn-outline' size='small'> 
+                      <FaGithub /> {t('home.code')}
+                    </Button>
                   </a>
                 </div>
               </div>

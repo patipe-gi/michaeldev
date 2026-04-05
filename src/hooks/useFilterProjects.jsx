@@ -1,7 +1,7 @@
 // hooks/useFilterProjects.js
 import { useState, useEffect } from 'react';
 
-export const useFilterProjects = (projects) => {
+export const useFilterProjects = (projects = []) => { // Valeur par défaut = []
   const [filteredProjects, setFilteredProjects] = useState(projects);
   const [filters, setFilters] = useState({
     searchTerm: '',
@@ -12,14 +12,20 @@ export const useFilterProjects = (projects) => {
   });
 
   useEffect(() => {
+    // Vérifier si projects est un tableau avant de continuer
+    if (!Array.isArray(projects) || projects.length === 0) {
+      setFilteredProjects([]);
+      return;
+    }
+
     let result = [...projects];
 
     // Filter by search term
     if (filters.searchTerm) {
       result = result.filter(project =>
-        project.name.toLowerCase().includes(filters.searchTerm.toLowerCase()) ||
-        project.description.toLowerCase().includes(filters.searchTerm.toLowerCase()) ||
-        project.tags.some(tag => tag.toLowerCase().includes(filters.searchTerm.toLowerCase()))
+        project.name?.toLowerCase().includes(filters.searchTerm.toLowerCase()) ||
+        project.description?.toLowerCase().includes(filters.searchTerm.toLowerCase()) ||
+        project.tags?.some(tag => tag.toLowerCase().includes(filters.searchTerm.toLowerCase()))
       );
     }
 
@@ -36,7 +42,7 @@ export const useFilterProjects = (projects) => {
     // Filter by tech stack
     if (filters.techStack) {
       result = result.filter(project =>
-        project.tags.some(tag => tag.toLowerCase() === filters.techStack.toLowerCase())
+        project.tags?.some(tag => tag.toLowerCase() === filters.techStack.toLowerCase())
       );
     }
 

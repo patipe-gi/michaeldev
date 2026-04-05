@@ -1,61 +1,59 @@
-// Header.jsx
-import { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
-import logo from './../../../public/image/d803a9baf2cafb7c064c4030b74971a7.png';
-import Button from '../Button';
-import Loader from '../Loader';
+import { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next"; 
+import logo from "./../../../public/image/d803a9baf2cafb7c064c4030b74971a7.png";
+import Button from "../Button";
+import Loader from "../Loader";
+import { LanguageSwitcher } from "../LanguageSwitcher";
 
 const Header = () => {
+  const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [navigating, setNavigating] = useState(false);
 
-  // Gestion du scroll pour l'effet de header
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Fermer le menu quand on clique sur un lien
   const handleLinkClick = () => {
+    
     setNavigating(true);
     setTimeout(() => {
       setIsMenuOpen(false);
       setNavigating(false);
-       
     }, 300);
-   
   };
 
-  // Empêcher le scroll du body quand le menu est ouvert
   useEffect(() => {
     if (isMenuOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     }
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     };
   }, [isMenuOpen]);
 
-   if (navigating) {
+  if (navigating) {
     return <Loader />;
   }
 
   return (
     <>
-      <header className={`nav ${isScrolled ? 'scrolled' : ''}`}>
-        <div className='logo-d'>
-          <img className='logo' src={logo} alt="logo" />
+      <header className={`nav ${isScrolled ? "scrolled" : ""}`}>
+        <div className="logo-d">
+          <img className="logo" src={logo} alt="logo" />
         </div>
 
-        {/* Menu burger button */}
-        <button 
-          className={`menu-toggle ${isMenuOpen ? 'active' : ''}`}
+        
+        <button
+          className={`menu-toggle ${isMenuOpen ? "active" : ""}`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Menu"
         >
@@ -64,68 +62,49 @@ const Header = () => {
           <span></span>
         </button>
 
-      
-        <div className={`hd-item ${isMenuOpen ? 'open' : ''}`}>
-          <NavLink 
-            to="/" 
-            onClick={handleLinkClick}
-            end
-          >
-            Home
+        <div className={`hd-item ${isMenuOpen ? "open" : ""}`}>
+          <NavLink to="/" onClick={handleLinkClick} end>
+            {t('navigation.home')}
+          </NavLink>
+          <NavLink to="/projects" onClick={handleLinkClick}>
+            {t('navigation.projects')}
+          </NavLink>
+          <NavLink to="/about" onClick={handleLinkClick}>
+            {t('navigation.about')}
+          </NavLink>
+          <NavLink to="/skills" onClick={handleLinkClick}>
+            {t('navigation.skills')}
+          </NavLink>
+          <NavLink to="/contact" onClick={handleLinkClick}>
+            {t('navigation.contact')}
           </NavLink>
           
-          <NavLink 
-            to="/projects"
-            onClick={handleLinkClick}
-          >
-            Projects
-          </NavLink>
-           <NavLink 
-            to="/about"
-            onClick={handleLinkClick}
-          >
-            About me
-          </NavLink>
-          
-          <NavLink 
-            to="/skills"
-            onClick={handleLinkClick}
-          >
-            Skills
-          </NavLink>   
-      
-          <NavLink 
-            to="/contact"
-            onClick={handleLinkClick}
-          >
-            Contact
-          </NavLink>
-           {isMenuOpen && (
-         <Button 
-            className="btn-outline mobile-hire-btn" 
-            size='medium'
-            onClick={handleLinkClick}
-          >
-            Hire Me
-          </Button>
-      )}
-
-
          
+          <div className="mobile-lang-wrapper">
+            <LanguageSwitcher onClick={handleLinkClick}  />
+          </div>
+            {isMenuOpen && (
+              <Button
+                className="btn-outline mobile-hire-btn"
+                size="medium"
+                onClick={handleLinkClick}
+              >
+                {t('navigation.hireMe')}
+              </Button>
+            )}
         </div>
 
-        <Button 
-          className="btn-outline" 
-          size='medium'
-        >
-          Hire Me
-        </Button>
-        
+      
+        <div className="header-right">
+          <LanguageSwitcher />
+          <Button className="btn-outline desktop-hire-btn" size="medium">
+            {t('navigation.hireMe')}
+          </Button>
+        </div>
       </header>
 
-  
       {isMenuOpen && (
-        <div 
+        <div
           className="mobile-overlay open"
           onClick={() => setIsMenuOpen(false)}
         />

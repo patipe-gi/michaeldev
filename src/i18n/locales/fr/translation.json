@@ -1,0 +1,142 @@
+{
+  "navigation": {
+    "home": "Accueil",
+    "projects": "Projets",
+    "about": "À propos",
+    "skills": "Compétences",
+    "contact": "Contact",
+    "hireMe": "Me Recruter"
+  },
+  
+  "cv": {
+    "download": "Télécharger CV",
+    "chooseLanguage": "Choisir la langue",
+    "english": "Version Anglaise",
+    "french": "Version Française",
+    "pdf": "PDF",
+    "preparing": "Préparation du téléchargement...",
+    "success": "Téléchargement du CV lancé !",
+    "error": "Échec du téléchargement",
+    "fileNotFound": "Fichier CV non trouvé",
+    "frenchNotFound": "Le fichier CV français n'existe pas",
+    "englishNotFound": "Le fichier CV anglais n'existe pas"
+  },
+  
+  "filters": {
+    "searchPlaceholder": "Rechercher par mot-clé...",
+    "filterBy": "Filtrer par",
+    "date": "Date",
+    "type": "Type",
+    "techStack": "Technologie",
+    "contribution": "Contribution",
+    "allDates": "Toutes les dates",
+    "allTypes": "Tous les types",
+    "allTechnologies": "Toutes les technologies",
+    "allContributions": "Toutes les contributions",
+    "activeFilters": "Filtres actifs :",
+    "search": "Recherche",
+    "year": "Année",
+    "tech": "Technologie",
+    "role": "Rôle",
+    "clearAll": "Tout effacer",
+    "options": {
+      "webApp": "Application Web",
+      "mobileApp": "Application Mobile",
+      "ecommerce": "E-Commerce",
+      "dataVis": "Visualisation de données",
+      "aiMl": "IA/ML",
+      "fullStack": "Full Stack",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "uiUx": "UI/UX"
+    }
+  },
+  
+  "projects": {
+      "title": "Mes Projets",
+    "showing": "Affichage de",
+    "of": "sur",
+    "projects": "projets",
+    "noResults": "Aucun projet ne correspond à vos critères.",
+    "clearFilters": "Effacer tous les filtres",
+    "liveDemo": "Démo en ligne",
+    "code": "Code source",
+    "items": {
+      "ecommercePro": {
+        "name": "E-Commerce Pro",
+        "description": "Plateforme e-commerce complète avec panier d'achat, paiement sécurisé et tableau de bord administrateur."
+      },
+      "taskflow": {
+        "name": "TaskFlow",
+        "description": "Application de gestion de tâches collaborative avec glisser-déposer et notifications en temps réel."
+      },
+      "weatherapp": {
+        "name": "WeatherApp",
+        "description": "Application météo avec prévisions sur 7 jours, carte interactive et alertes météo."
+      },
+      "portfolio3d": {
+        "name": "Portfolio 3D",
+        "description": "Portfolio interactif avec animations 3D, particules et transitions fluides."
+      },
+      "socialDashboard": {
+        "name": "Tableau de bord social",
+        "description": "Tableau de bord d'analyse des réseaux sociaux avec graphiques interactifs et export de données."
+      },
+      "foodDelivery": {
+        "name": "Application de livraison de repas",
+        "description": "Application mobile de livraison de repas avec suivi en temps réel et système de notation."
+      },
+      "aiImageGenerator": {
+        "name": "Générateur d'images IA",
+        "description": "Générateur d'images par IA avec invites personnalisées et téléchargement haute résolution."
+      }
+    },
+    "categories": {
+      "ecommerce": "E-Commerce",
+      "webApp": "Application Web",
+      "mobileApp": "Application Mobile",
+      "dataVis": "Visualisation de données",
+      "aiMl": "IA/ML"
+    },
+    "contributions": {
+      "fullStack": "Full Stack",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "uiUx": "UI/UX"
+    }
+  },
+
+  "contact": {
+    "title": "CRÉONS QUELQUE CHOSE",
+    "together": "ENSEMBLE",
+    "description": "Vous avez une question, un projet en tête ou simplement envie d'échanger ? Je serais ravi de vous entendre — n'hésitez pas à me contacter à tout moment.",
+    "directContact": "Contact Direct",
+    "social": "Réseaux sociaux",
+    "yourName": "Votre nom",
+    "yourEmail": "Votre email",
+    "projectType": "Type de projet",
+    "yourMessage": "Votre message",
+    "sendMessage": "Envoyer le message",
+    "placeholders": {
+      "name": "Jean Dupont",
+      "email": "jean@exemple.com",
+      "projectType": "Application Web, Mobile, etc.",
+      "message": "Parlez-moi de votre projet..."
+    }
+  },
+   "home": {
+    "title": "PATIPE",
+    "name": "MICHAEL",
+    "subtitle": "DÉVELOPPEUR FULL STACK | CRÉATION DE SOLUTIONS NUMÉRIQUES INNOVANTES DE A À Z",
+    "description": "Création d'applications robustes avec des technologies modernes et un design soigné",
+    "exploreProjects": "Explorer mes projets",
+    "techStack": "Ma Stack Technique",
+    "recentProjects": "Projets Récents",
+    "recentProjectsDesc": "Quelques-uns de mes derniers travaux et projets vedettes",
+    "liveDemo": "Démo en ligne",
+    "code": "Code source"
+  }
+
+
+
+}

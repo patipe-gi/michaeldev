@@ -1,0 +1,87 @@
+/* LanguageSwitcher.css */
+.language-switcher {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(28, 32, 44, 0.6);
+    padding: 0.25rem;
+    border-radius: 2rem;
+    border: 1px solid rgba(24, 197, 164, 0.2);
+}
+
+.lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    background: transparent;
+    border: none;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #a0a0a0;
+    font-weight: 500;
+    font-size: 0.75rem;
+}
+
+.lang-btn .flag-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.lang-btn .lang-text {
+    transition: all 0.3s ease;
+}
+
+/* Style actif */
+.lang-btn.active {
+    background: linear-gradient(135deg, rgba(24, 197, 164, 0.2), rgba(151, 71, 255, 0.2));
+    color: #18c5a4;
+}
+
+.lang-btn.active .flag-icon {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 2px rgba(24, 197, 164, 0.3);
+}
+
+/* Effet au survol */
+.lang-btn:hover:not(.active) {
+    background: rgba(24, 197, 164, 0.1);
+    color: #18c5a4;
+    transform: translateY(-1px);
+}
+
+.lang-btn:hover:not(.active) .flag-icon {
+    transform: scale(1.05);
+}
+
+/* Version mobile */
+@media (max-width: 1200px) {
+    .language-switcher {
+        gap: 0.25rem;
+        padding: 0.2rem;
+    }
+    
+    .lang-btn {
+        padding: 0.3rem 0.6rem;
+    }
+    
+    .lang-btn .flag-icon {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .lang-text {
+        display: none; /* Cache le texte sur mobile, ne garde que les drapeaux */
+    }
+}
+
+/* Version desktop */
+@media (min-width: 1288px) {
+    .lang-text {
+        display: inline-block;
+    }
+}
