@@ -72,9 +72,9 @@ const Header = () => {
           <NavLink to="/about" onClick={handleLinkClick}>
             {t('navigation.about')}
           </NavLink>
-          <NavLink to="/skills" onClick={handleLinkClick}>
+          {/* <NavLink to="/skills" onClick={handleLinkClick}>
             {t('navigation.skills')}
-          </NavLink>
+          </NavLink> */}
           <NavLink to="/contact" onClick={handleLinkClick}>
             {t('navigation.contact')}
           </NavLink>

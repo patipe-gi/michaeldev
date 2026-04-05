@@ -1,7 +1,7 @@
 // Contact.jsx
 import { useTranslation } from 'react-i18next'; // Ajout de useTranslation
 import Button from "../components/Button";
-import { FaAt, FaGithub, FaLinkedin, FaWhatsapp, FaMap } from "react-icons/fa";
+import { FaAt, FaGithub, FaLinkedin, FaWhatsapp, FaMap, FaMapMarkerAlt } from "react-icons/fa";
 
 function Contact() {
   const { t } = useTranslation(); // Ajout du hook de traduction
@@ -39,7 +39,7 @@ function Contact() {
             </p>
           </a>
           <p>
-            <FaMap className="icon" />
+            <FaMapMarkerAlt className="icon" />
             Littoral, Douala
           </p>
         </div>

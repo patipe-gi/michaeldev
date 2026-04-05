@@ -49,9 +49,9 @@
       "uiUx": "UI/UX"
     }
   },
-  
+
   "projects": {
-      "title": "My Projects",
+    "title": "My Projects",
     "showing": "Showing",
     "of": "of",
     "projects": "projects",
@@ -103,7 +103,7 @@
       "uiUx": "UI/UX"
     }
   },
-    "contact": {
+  "contact": {
     "title": "LET'S BUILD SOMETHING",
     "together": "TOGETHER",
     "description": "You have a question, a project in mind, or just want to connect? I'd be happy to hear from you — feel free to reach out anytime.",
@@ -120,21 +120,91 @@
       "projectType": "Web App, Mobile App, etc.",
       "message": "Tell me about your project..."
     }
-  }
-,
-"home": {
+  },
+  "home": {
     "title": "PATIPE",
     "name": "MICHAEL",
     "subtitle": "FULL STACK DEVELOPER | CREATING INNOVATIVE DIGITAL SOLUTIONS FROM TO BACK",
     "description": "Building robust application with Modern Technologies & Design",
     "exploreProjects": "Explore My Project",
-    "techStack": "My Tech Stack",
+    "techStack": "My Key Technologies",
     "recentProjects": "Recent Projects",
     "recentProjectsDesc": "Some of my latest work and featured projects",
     "liveDemo": "Live Demo",
     "code": "Code"
-  }
+  },
+  "about": {
+    "profile": {
+      "name": "Michael Patipe",
+      "title": "Full Stack Developer",
+      "location": "Douala, Cameroon",
+      "experience": "+ years experience",
+      "downloadCV": "Download CV",
+      "alt": "Michael Patipe - Full Stack Developer"
+    },
+    "about": {
+      "title": "About me",
+     "content": [
+      "Code has been my life since the class of form 4. I started with the C language, and that's when I realized one thing: no matter how difficult the problem, there's always a solution. I'm a very curious person, and I never give up. What really drives me isn't just writing lines of code it's taking a project, analyzing it from A to Z, and figuring out the best way to build it so that it's actually useful. I'm a Full-Stack developer, but my heart beats a little stronger for Backend and systems analysis."
+  ]
+},
+    "skills": {
+      "title": "Skills & Experience"
+    },
+    "learning": {
+      "title": "Continuous Learning",
+      "content": [
+        " Never stop learning. After mastering Full stack development, I decided to dive into Networking and Security. Why? Because I want to be that complete developer who doesn't just create a nice interface, but also knows how to secure data and manage Cloud infrastructures. I want my work to be solid, fast, and most of all, protected."
+      ]
+    },
+    "goals": {
+      "title": "Future Goals",
+        "content": [
+"My big dream is not to grow alone. I want to create a collective of IT experts a kind of group where everyone contributes their own piece to the puzzle. We would have a shared platform where we showcase our projects and skills like living résumés. My goal is also to pass on knowledge: creating training modules to help others level up. I want technology to bring real solutions to our society, and I know that together, we'll go much further." ]
+    },
+  
  
-
+    "parcours": {
+      "title": "My Journey",
+      "intro": "My journey reflects continuous progress, marked by learning, practice, and the completion of concrete projects.",
+      "items": {
+        "debut": {
+          "period": "2019",
+          "title": "Beginning of Programming",
+          "description": "Discovery of C language and programming basics in high school"
+        },
+        "bac": {
+          "period": "2024",
+          "title": "Scientific Baccalaureate",
+          "description": "Obtained GCE A-Level and orientation towards the IT field. As part of my skill development, I enrolled in professional training at Localhost Academy, where I completed a 12-month program."
+        },
+        "laravel": {
+          "period": "Nov 2024",
+          "title": "Laravel Training (PHP)",
+          "description": "I learned to structure my logic and work in a team on my first major project: Ecomarket (multi-vendor e-commerce). At the end of this training, we presented a defense and received an Excellent grade!"
+        },
+        "react": {
+          "period": "April 2025",
+          "title": "React & Node.js Training",
+          "description": "Development of a platform combining e-commerce, service booking, and recruitment Received Very Good with jury congratulations (This is my favorite combination.)"
+        },
+        "flutter": {
+          "period": "Sept 2025",
+          "title": "Flutter Training",
+          "description": "My favorite project: Development of a real estate mobile application with geolocation, digital wallet, and an automatic rent payment system"
+        },
+        "stage": {
+          "period": "Oct 2025",
+          "title": "Paid Internship at Master Key SARL",
+          "description": "My first paid professional experience, where I worked on the interface of the Master KeyPay project. This showed me the reality of the field as a Frontend developer."
+        },
+        "today": {
+          "period": "Today",
+          "title": "University (Networks & Security)",
+          "description": "I am preparing my future to combine development and cybersecurity. That's what will make my difference in the market."
+        }
+      }
+    }
+  }
 
 }

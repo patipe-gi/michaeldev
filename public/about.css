@@ -1,0 +1,632 @@
+/* About.css */
+
+/* ==================== PAGE CONTAINER ==================== */
+.about-page {
+  padding-top: 40px;
+}
+
+
+
+/* ==================== WRAPPER PARENT (FLEX) ==================== */
+.about-wrapper {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+/* ==================== SIDEBAR (STICKY) ==================== */
+.about-sidebar {
+  flex: 0 0 320px;
+  position: sticky;
+  top: 100px;
+}
+
+.profile-card {
+  background: linear-gradient(135deg, #19212e, #171f2b);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Bordure dégradée */
+.profile-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 1.5rem;
+  padding: 1px;
+  background: linear-gradient(135deg, #18c5a4, #9747ff);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.profile-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Image de profil */
+.profile-image {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid transparent;
+  background: linear-gradient(135deg, #18c5a4, #9747ff);
+  background-clip: padding-box;
+  position: relative;
+}
+
+.profile-image::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #18c5a4, #9747ff);
+  z-index: -1;
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Informations profil */
+.profile-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.profile-title {
+  color: #18c5a4;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.profile-location,
+.profile-experience {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #a0a0a0;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.location-icon,
+.experience-icon {
+  color: #18c5a4;
+  font-size: 0.9rem;
+}
+
+/* Bouton CV */
+.cv-button {
+  width: 100%;
+  margin: 1.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* Réseaux sociaux */
+.profile-social {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-link {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background: rgba(24, 197, 164, 0.1); */
+  border-radius: 50%;
+  color: #18c5a4;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+
+}
+
+.social-link:hover {
+  /* background: linear-gradient(135deg, #18c5a4, #9747ff);
+   */
+  background: rgba(24, 197, 164, 0.1);
+
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* ==================== CONTENU PRINCIPAL ==================== */
+.about-content {
+  flex: 1;
+}
+
+/* Sections */
+.about-section {
+  margin-bottom: 1.5rem;
+  
+
+}
+
+/* .about-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  padding: 1px;
+  background: linear-gradient(135deg, #18c5a4, #9747ff);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+} */
+
+/* .about-section:hover {
+  transform: translateY(-3px);
+} */
+
+/* En-tête de section */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.section-icon {
+  font-size: 1.8rem;
+  color: #18c5a4;
+}
+
+.section-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+}
+
+.section-line {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, #18c5a4, transparent);
+}
+
+/* Corps de section */
+.section-body {
+  color: #c0c0c0;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.section-body p {
+  margin: 0;
+}
+
+/* ==================== SKILLS ==================== */
+.skills-grid {
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.skill-item-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.skill-icon {
+  width: 45px;
+  height: 45px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background: rgba(24, 197, 164, 0.1); */
+  border-radius: 10px;
+  padding: 2px;
+}
+
+.skill-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* SkillBar component */
+.skill-bar {
+  flex: 1;
+}
+
+.skill-bar-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.skill-name {
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.skill-percentage {
+  color: #18c5a4;
+  font-size: 0.85rem;
+}
+
+.skill-bar-track {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.skill-bar-fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 1s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-bar-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* ==================== RESPONSIVE ==================== */
+
+/* Tablette */
+@media (max-width: 992px) {
+  .about-wrapper {
+    gap: 2rem;
+  }
+  .skills-grid {
+  display: grid;
+  
+  grid-template-columns: repeat(3 ,1fr);
+  }
+  .about-sidebar {
+    flex: 0 0 280px;
+  }
+  
+  .profile-card {
+    padding: 1.5rem;
+  }
+  
+  .profile-image {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .profile-name {
+    font-size: 1.3rem;
+  }
+}
+@media (max-width: 843px) {
+    .skills-grid {
+  display: grid;
+  gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+ 
+}
+}
+/* Mobile (< 768px) */
+@media (max-width: 768px) {
+  .about-page {
+    padding-top: 40px;
+  }
+  
+  .about-container {
+    padding: 1rem;
+  }
+  
+  .about-wrapper {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .about-sidebar {
+    flex: auto;
+    position: static;
+    width: 100%;
+  }
+  
+  .profile-card {
+    
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .profile-image {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .profile-name {
+    font-size: 1.2rem;
+  }
+  
+  .section-icon {
+    font-size: 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 1.1rem;
+  }
+  
+  
+  
+  .skill-icon {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .skill-name {
+    font-size: 0.85rem;
+  }
+  
+  .skill-percentage {
+    font-size: 0.8rem;
+  }
+}
+
+/* Très petit mobile */
+@media (max-width: 480px) {
+  .about-container {
+    padding: 0.75rem;
+  }
+  
+  .about-section {
+    padding: 1rem;
+  }
+  
+  .section-header {
+    gap: 0.5rem;
+  }
+  
+  .section-icon {
+    font-size: 1.2rem;
+  }
+  
+  .section-title {
+    font-size: 1rem;
+  }
+  
+  .section-body {
+    font-size: 0.85rem;
+  }
+  
+  .profile-card {
+    padding: 1rem;
+  }
+  
+  .social-link {
+  background: rgba(24, 197, 164, 0.1);
+
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+}
+
+
+/* ==================== TIMELINE SECTION ==================== */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+}
+
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 100px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, #18c5a4, #9747ff);
+  border-radius: 2px;
+}
+
+
+.timeline-item {
+  display: flex;
+  gap: 2rem;
+  position: relative;
+}
+
+/* Période (date) */
+.timeline-year {
+  flex: 0 0 90px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  font-weight: 600;
+  color: #18c5a4;
+  font-size: 0.8rem;
+}
+
+.year-icon {
+  font-size: 0.9rem;
+  color: #9747ff;
+}
+
+/* Contenu */
+.timeline-content {
+  flex: 1;
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  border-left: 2px solid rgba(24, 197, 164, 0.2);
+  transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-content {
+  border-left-color: #18c5a4;
+  transform: translateX(3px);
+}
+
+.timeline-title {
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-description {
+  color: #c0c0c0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ==================== RESPONSIVE (même design, tailles réduites) ==================== */
+
+/* Tablette */
+@media (max-width: 992px) {
+  .timeline {
+    gap: 1.25rem;
+  }
+  
+  .timeline::before {
+    left: 80px;
+  }
+  
+  .timeline-item {
+    gap: 1.5rem;
+  }
+  
+  .timeline-year {
+    flex: 0 0 70px;
+    font-size: 0.85rem;
+    gap: 0.4rem;
+  }
+  
+  .year-icon {
+    font-size: 0.85rem;
+  }
+  
+  .timeline-content {
+    padding: 0.4rem 0 0.4rem 1.25rem;
+  }
+  
+  .timeline-title {
+    font-size: 0.95rem;
+  }
+  
+  .timeline-description {
+    font-size: 0.8rem;
+  }
+}
+
+/* Mobile (même design, plus petit) */
+@media (max-width: 768px) {
+  .timeline {
+    gap: 1rem;
+  }
+  
+  .timeline::before {
+    left: 60px;  /* Réduit mais toujours présent */
+  }
+  
+  .timeline-item {
+    gap: 1rem;
+  }
+  
+  .timeline-year {
+    flex: 0 0 50px;
+    font-size: 0.75rem;
+    gap: 0.3rem;
+    flex-direction: column;  /* Icône au-dessus du texte */
+    align-items: flex-start;
+  }
+  
+  .year-icon {
+    font-size: 0.75rem;
+  }
+  
+  .timeline-content {
+    padding: 0.3rem 0 0.3rem 1rem;
+  }
+  
+  .timeline-title {
+    font-size: 0.85rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  .timeline-description {
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+}
+
+/* Petit mobile (480px et moins) */
+@media (max-width: 480px) {
+  .timeline {
+    gap: 0.875rem;
+  }
+  
+  .timeline::before {
+    left: 45px;
+  }
+  
+  .timeline-item {
+    gap: 0.75rem;
+  }
+  
+  .timeline-year {
+    flex: 0 0 40px;
+    font-size: 0.5rem;
+    gap: 0.2rem;
+  }
+  
+  .year-icon {
+    font-size: 0.65rem;
+  }
+  
+  .timeline-content {
+    padding: 0.2rem 0 0.2rem 0.75rem;
+  }
+  
+  .timeline-title {
+    font-size: 0.8rem;
+  }
+  
+  .timeline-description {
+    font-size: 0.7rem;
+    line-height: 1.35;
+  }
+}

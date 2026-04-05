@@ -5,12 +5,6 @@ import { Link } from "react-router-dom";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import skill from "../../public/image/Gemini_Generated_Image_gqywl6gqywl6gqyw.png";
 import prof_image from "../../public/image/Gemini_Generated_Image_srx4i4srx4i4srx4.png";
-import html from "../../public/image/html.png";
-import css from "../../public/image/css.png";
-import react from "../../public/image/react.png";
-import nodejs from "../../public/image/node js.png";
-import flutter from "../../public/image/flutter.png";
-import laravel from "../../public/image/laravel.png";
 import CVDownload from "../components/CVDownload";
 import { useEffect, useState } from "react";
 import Loader from "../components/Loader";
@@ -73,12 +67,13 @@ function Home() {
       <div className="section">
         <h2>{t('home.techStack')}</h2>
         <div className="tech">
-          <img src={html} alt="html" className="stack_image" />
-          <img src={css} alt="css" className="stack_image" />
-          <img src={react} alt="react" className="stack_image" />
-          <img src={nodejs} alt="nodejs" className="stack_image" />
-          <img src={laravel} alt="laravel" width={60} height={60} />
-          <img src={flutter} alt="flutter" width={60} height={60} />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="html" className="stack_image" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="css" className="stack_image" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"alt="react" className="stack_image" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="nodejs" className="stack_image" />
+          <img src= "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="laravel" className="stack_image" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="flutter" className="stack_image" />
+          <img src= "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="git" className="stack_image" />
         </div>
       </div>
 

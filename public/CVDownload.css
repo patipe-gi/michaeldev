@@ -16,6 +16,9 @@
   animation: fadeIn 0.3s ease;
   padding: 1rem;
 }
+.flag{
+  display: none;
+}
 
 @keyframes fadeIn {
   from {
@@ -116,15 +119,12 @@
   border-color: #18c5a4;
 }
 
-.language-btn.english:hover {
+.language-btn.english:hover,.language-btn.french:hover  {
   background: rgba(24, 197, 164, 0.1);
   box-shadow: 0 0 15px rgba(24, 197, 164, 0.2);
 }
 
-.language-btn.french:hover {
-  background: rgba(151, 71, 255, 0.1);
-  box-shadow: 0 0 15px rgba(151, 71, 255, 0.2);
-}
+
 
 .flag {
   font-size: 1.8rem;
@@ -194,6 +194,12 @@
   .modal-overlay {
     padding: 0.5rem;
   }
+  .flag{
+    display: block;
+  }
+  .language-btn .flag-icon{
+    display: none;
+  }
   
   .modal-content {
     max-width: 450px;
@@ -258,10 +264,7 @@
     gap: 1.2rem;
   }
   
-  .language-btn {
-    padding: 1.5rem 2rem;
-    font-size: 1.3rem;
-  }
+ 
   
   .flag {
     font-size: 2.5rem;
@@ -296,7 +299,7 @@
   cursor: not-allowed;
 }
 
-@media  (max-width: 576px) {
+
 
   
  .modal-overlay .modal-content .modal-header {
@@ -314,4 +317,3 @@
   
   
 
-}

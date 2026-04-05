@@ -7,7 +7,7 @@
     "contact": "Contact",
     "hireMe": "Me Recruter"
   },
-  
+
   "cv": {
     "download": "Télécharger CV",
     "chooseLanguage": "Choisir la langue",
@@ -21,7 +21,7 @@
     "frenchNotFound": "Le fichier CV français n'existe pas",
     "englishNotFound": "Le fichier CV anglais n'existe pas"
   },
-  
+
   "filters": {
     "searchPlaceholder": "Rechercher par mot-clé...",
     "filterBy": "Filtrer par",
@@ -51,9 +51,9 @@
       "uiUx": "UI/UX"
     }
   },
-  
+
   "projects": {
-      "title": "Mes Projets",
+    "title": "Mes Projets",
     "showing": "Affichage de",
     "of": "sur",
     "projects": "projets",
@@ -124,19 +124,90 @@
       "message": "Parlez-moi de votre projet..."
     }
   },
-   "home": {
+  "home": {
     "title": "PATIPE",
     "name": "MICHAEL",
     "subtitle": "DÉVELOPPEUR FULL STACK | CRÉATION DE SOLUTIONS NUMÉRIQUES INNOVANTES DE A À Z",
     "description": "Création d'applications robustes avec des technologies modernes et un design soigné",
     "exploreProjects": "Explorer mes projets",
-    "techStack": "Ma Stack Technique",
+    "techStack": "Mes technologies clés",
     "recentProjects": "Projets Récents",
     "recentProjectsDesc": "Quelques-uns de mes derniers travaux et projets vedettes",
     "liveDemo": "Démo en ligne",
     "code": "Code source"
+  },
+  "about": {
+    "profile": {
+      "name": "Michael Patipe",
+      "title": "Développeur Full Stack",
+      "location": "Douala, Cameroun",
+      "experience": "+ ans d'expérience",
+      "downloadCV": "Télécharger CV",
+      "alt": "Michael Patipe - Développeur Full Stack"
+    },
+    "about": {
+      "title": "À propos de moi",
+      "content":[
+        "Le code, c’est ma vie depuis la classe de 4ème. J’ai commencé avec le langage C, et c’est là que j’ai compris une chose : peu importe la difficulté du problème, il y a toujours une solution. Je suis quelqu'un de très curieux et je ne lâche jamais rien. Ce qui me passionne vraiment, ce n’est pas juste d'écrire des lignes de code, c’est de prendre un projet, l'analyser de A à Z et trouver la meilleure façon de le construire pour qu'il soit utile. Je suis un développeur Full-Stack, mais mon cœur bat un peu plus fort pour le Backend et l'analyse de systèmes."
+   ]
+    },
+    "skills": {
+      "title": "Compétences & Expérience"
+    },
+    "learning": {
+      "title": "Apprentissage Continu",
+  "content": [
+    "Je ne m'arrête jamais d'apprendre. Après avoir maîtrisé Full stack development, j'ai décidé de me lancer dans les Réseaux et la Sécurité. Pourquoi ? Parce que je veux être ce développeur complet qui ne se contente pas de créer une belle interface, mais qui sait aussi comment sécuriser les données et gérer les infrastructures Cloud. Je veux que mon travail soit solide, rapide et surtout, protégé."
+]    },
+    "goals": {
+      "title": "Objectifs Futurs",
+  "content": [
+"Mon grand rêve, c'est de ne pas évoluer seul. Je veux créer un collectif d'experts IT, une sorte de groupe où chacun apporte sa pierre à l'édifice. On aurait une plateforme commune où on partage nos projets et nos compétences comme des CV vivants. Mon but, c'est aussi de transmettre : créer des modules de formation pour aider les autres à monter en compétence. Je veux que la technologie apporte de vraies solutions à notre société, et je sais qu'en groupe, on ira plus loin." ]
+    },
+  
+  
+    "parcours": {
+      "title": "Mon Parcours",
+      "intro": "Mon parcours reflète une progression continue, marquée par l'apprentissage, la pratique et la réalisation de projets concrets.",
+      "items": {
+        "debut": {
+          "period": "2019",
+          "title": "Début en programmation",
+          "description": "Découverte du langage C et des bases de la programmation au lycée"
+        },
+        "bac": {
+          "period": "2024",
+          "title": "Baccalauréat scientifique",
+          "description": "Obtention du GCE A-Level et orientation vers le domaine informatique. Dans le cadre de ma montée en compétences, je me suis inscrit à une formation professionnelle au centre Localhost Academy, où j'ai suivi un parcours de 12 mois."
+        },
+        "laravel": {
+          "period": "Nov 2024",
+          "title": "Formation Laravel (PHP)",
+          "description": "J'ai appris à structurer ma logique et à travailler en équipe sur mon premier gros projet : Ecomarket (e-commerce multi-boutique). À la fin de cette formation, nous avons présenté une soutenance à l'issue de laquelle nous avons obtenu la mention Excellent !"
+        },
+        "react": {
+          "period": "Avril 2025",
+          "title": "Formation React & Node.js",
+          "description": "Développement d'une plateforme combinant e-commerce, réservation de services et recrutement Mention très bien avec félicitations du jury (C'est ma combinaison préférée.)"
+        },
+        "flutter": {
+          "period": "Sept 2025",
+          "title": "Formation Flutter",
+          "description": "Mon projet coup de cœur : Développement d'une application mobile immobilière avec géolocalisation, portefeuille numérique et un système de paiement automatique du loyer"
+        },
+        "stage": {
+          "period": "Oct 2025",
+          "title": "Stage rémunéré chez Master Key SARL",
+          "description": "Ma première expérience professionnelle rémunérée, où j'ai travaillé sur l'interface du projet Master KeyPay. Cela m'a montré la réalité du terrain en tant que développeur Frontend."
+        },
+        "today": {
+          "period": "Aujourd'hui",
+          "title": "Université (Réseaux & Sécurité)",
+          "description": "Je prépare mon futur pour combiner le développement et la cybersécurité. C'est ça qui fera ma différence sur le marché."
+        }
+      }
+    }
   }
-
-
+  
 
 }

@@ -3,6 +3,8 @@ import { useTranslation } from 'react-i18next'; // Ajout de useTranslation
 import toast from 'react-hot-toast';
 import Button from './Button';
 import Loader from './Loader'; 
+import { FaDownload } from 'react-icons/fa';
+import { createPortal } from 'react-dom';
 
 const CVDownload = ({ className = "" }) => {
   const { t } = useTranslation(); // Ajout du hook de traduction
@@ -60,7 +62,7 @@ const CVDownload = ({ className = "" }) => {
     } catch (err) {
       // Erreur - Remplacer le toast de chargement par une erreur
       setError(err.message);
-      toast.error(t('cv.error'), { id: loadingToast, duration: 3000 });
+      toast.error(t('cv.error'), { id: loadingToast, duration: 3000 ,position:"top-center"});
       
     } finally {
       setDownloadLoading(false);
@@ -78,17 +80,15 @@ const CVDownload = ({ className = "" }) => {
         className={className} 
         size="medium"
         onClick={() => setShowModal(true)}
-      >
+        icon={<FaDownload />  }
+      > 
         {t('cv.download')}
       </Button>
 
-      {showModal && (
+      {showModal && createPortal (
         <div className="modal-overlay" onClick={() => setShowModal(false)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <div className="modal-header">
-              <h3>{t('cv.chooseLanguage')}</h3>
-              <button className="modal-close" onClick={() => setShowModal(false)}>×</button>
-            </div>
+          
             <div className="modal-body">
               {error && (
                 <div className="error-message">
@@ -99,7 +99,13 @@ const CVDownload = ({ className = "" }) => {
                 className="language-btn english"
                 onClick={() => handleDownload('english')}
               >
-                <span className="flag">🇬🇧</span>
+                 <img
+                    src="https://flagcdn.com/w80/gb.png"
+                    alt="English"
+                    className="flag-icon"
+                />
+              <span className="flag">🇬🇧</span>
+
                 {t('cv.english')}
                 <span className="file-size">({t('cv.pdf')})</span>
               </button>
@@ -107,13 +113,18 @@ const CVDownload = ({ className = "" }) => {
                 className="language-btn french"
                 onClick={() => handleDownload('french')}
               >
-                <span className="flag">🇫🇷</span>
+               <img
+                    src="https://flagcdn.com/w80/fr.png"
+                    alt="Français"
+                    className="flag-icon"
+                /> <span className="flag">🇫🇷</span>
                 {t('cv.french')}
                 <span className="file-size">({t('cv.pdf')})</span>
               </button>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   );
