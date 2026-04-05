@@ -198,9 +198,7 @@ const parcoursKeys = ['debut', 'bac', 'laravel', 'react', 'flutter', 'stage', 't
               </div>
               <div className="section-body">
                 <p>
-                  {sections[0].content.map((paragraph) => (
-                    {paragraph}
-                  ))}
+                  {sections[0].content}
                 </p>
               </div>
             </section>
@@ -238,9 +236,7 @@ const parcoursKeys = ['debut', 'bac', 'laravel', 'react', 'flutter', 'stage', 't
               </div>
               <div className="section-body">
                  <p>
-                  {sections[2].content.map((paragraph) => (
-                    {paragraph}
-                  ))}
+                  {sections[2].content}
                 </p>
               </div>
             </section>
@@ -254,9 +250,7 @@ const parcoursKeys = ['debut', 'bac', 'laravel', 'react', 'flutter', 'stage', 't
               </div>
               <div className="section-body">
                 <p>
-                  {sections[3].content.map((paragraph) => (
-                    {paragraph}
-                  ))}
+                  {sections[3].content}
                 </p>
               </div>
             </section>
