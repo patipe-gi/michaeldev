@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaSpinner } from 'react-icons/fa'; // Ajout de l'icône spinner
 
 const Button = ({ 
   children, 
@@ -9,14 +10,17 @@ const Button = ({
   fullWidth = false,
   icon = null,
   type = 'button',
-  className = ''
+  className = '',
+  loading = false, // Nouvelle propriété loading
+  loadingText = null // Texte optionnel pendant le chargement
 }) => {
   const classes = [
     'btn',
     `btn-${variant}`,
     `btn-${size}`,
     fullWidth ? 'btn-full-width' : '',
-    disabled ? 'btn-disabled' : '',
+    disabled || loading ? 'btn-disabled' : '',
+    loading ? 'btn-loading' : '',
     className
   ].filter(Boolean).join(' ');
 
@@ -25,10 +29,22 @@ const Button = ({
       type={type}
       className={classes}
       onClick={onClick}
-      disabled={disabled}
+      disabled={disabled || loading}
     >
-      {icon && <span className="btn-icon">{icon}</span>}
-      <span className="btn-text">{children}</span>
+      {/* Afficher l'icône de loader si loading est true */}
+      {loading && (
+        <span className="btn-icon btn-loader-icon">
+          <FaSpinner className="spinner" />
+        </span>
+      )}
+      
+      {/* Afficher l'icône normale si pas en loading */}
+      {!loading && icon && <span className="btn-icon">{icon}</span>}
+      
+      {/* Texte du bouton */}
+      <span className="btn-text">
+        {loading && loadingText ? loadingText : children}
+      </span>
     </button>
   );
 };

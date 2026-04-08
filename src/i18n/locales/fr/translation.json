@@ -213,7 +213,14 @@
         }
       }
     }
+  } ,"noInternet": {
+    "title": "Pas de connexion internet",
+    "description": "Vérifie ton Wi-Fi ou tes données mobiles et réessaie.",
+    "tryAgain": "Réessayer",
+    "reconnecting": "Reconnexion...",
+    "autoReload": "La page se rechargera automatiquement dès que tu seras de nouveau en ligne.",
+    "autoRetry": "Réessai automatique dans 5s",
+    "retryingIn": "Réessai dans {{seconds}}s"
   }
-  
 
 }

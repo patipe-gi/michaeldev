@@ -211,6 +211,15 @@
         }
       }
     }
+  },
+   "noInternet": {
+    "title": "No internet connection",
+    "description": "Check your Wi-Fi or mobile data and try again.",
+    "tryAgain": "Try again",
+    "reconnecting": "Reconnecting...",
+    "autoReload": "The page will reload automatically once you are back online.",
+    "autoRetry": "Auto retry in 5s",
+    "retryingIn": "Retrying in {{seconds}}s"
   }
 
 }

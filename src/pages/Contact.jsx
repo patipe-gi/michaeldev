@@ -133,7 +133,7 @@ function Contact() {
               name='message'
             ></textarea>
 
-            <Button size="medium" type='submit'>{t('contact.sendMessage')}</Button>
+            <Button size="medium" type='submit' loading={isSending} >{t('contact.sendMessage')}  </Button>
           </form>
         </div>
 

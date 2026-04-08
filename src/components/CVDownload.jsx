@@ -10,7 +10,6 @@ const CVDownload = ({ className = "" }) => {
   const { t } = useTranslation(); // Ajout du hook de traduction
   const [showModal, setShowModal] = useState(false);
   const [error, setError] = useState(null);
-  const [downloadLoading, setDownloadLoading] = useState(false);
 
   const checkFileExists = async (url) => {
     try {
@@ -22,7 +21,6 @@ const CVDownload = ({ className = "" }) => {
   };
 
   const handleDownload = async (language) => {
-    setDownloadLoading(true); 
     setError(null);
     
     // Afficher un toast de chargement avec traduction
@@ -55,21 +53,18 @@ const CVDownload = ({ className = "" }) => {
       link.click();
       document.body.removeChild(link);
       
-      // Succès - Remplacer le toast de chargement par un succès
+     
       toast.success(t('cv.success'), { id: loadingToast, duration: 4000 });
       setShowModal(false);
       
     } catch (err) {
-      // Erreur - Remplacer le toast de chargement par une erreur
+    
       setError(err.message);
       toast.error(t('cv.error'), { id: loadingToast, duration: 3000 ,position:"top-center"});
       
-    } finally {
-      setDownloadLoading(false);
-    }
+    } 
   };
 
-  // Afficher le loader pendant le téléchargement
 
   return (
     <>
@@ -78,6 +73,7 @@ const CVDownload = ({ className = "" }) => {
         size="medium"
         onClick={() => setShowModal(true)}
         icon={<FaDownload />  }
+        
       > 
         {t('cv.download')}
       </Button>

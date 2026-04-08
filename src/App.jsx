@@ -4,6 +4,7 @@ import Loader from './components/Loader';
 import Layout from './components/Layout/Layout';
 import { Toaster } from 'react-hot-toast';
 import { LanguageProvider } from './contexts/LanguageContext';
+import NoInternetConnection from './components/NoInternetConnection';
 
 // Lazy loading des pages
 const Home = lazy(() => import('./pages/Home'));
@@ -16,7 +17,28 @@ const NotFound = lazy(() => import('./pages/NotFound'));
 
 function App() {
   const [initialLoading, setInitialLoading] = useState(true);
+    const [isOnline, setIsOnline] = useState(navigator.onLine);
 
+  useEffect(() => {
+    // Détecter les changements de connexion
+    const handleOnline = () => {
+      setIsOnline(true);
+      // Recharger automatiquement quand la connexion revient
+      setTimeout(() => window.location.reload(), 1500);
+    };
+    
+    const handleOffline = () => {
+      setIsOnline(false);
+    };
+
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+    };
+  }, []);
   useEffect(() => {
     const timer = setTimeout(() => {
       setInitialLoading(false);
@@ -24,6 +46,10 @@ function App() {
 
     return () => clearTimeout(timer);
   }, []);
+    if (!isOnline) {
+    return <NoInternetConnection onRetry={() => setIsOnline(navigator.onLine)} />;
+  }
+
 
   if (initialLoading) {
     return <Loader />;
