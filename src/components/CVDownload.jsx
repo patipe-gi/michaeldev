@@ -70,9 +70,6 @@ const CVDownload = ({ className = "" }) => {
   };
 
   // Afficher le loader pendant le téléchargement
-  if (downloadLoading) {
-    return <Loader />;
-  }
 
   return (
     <>

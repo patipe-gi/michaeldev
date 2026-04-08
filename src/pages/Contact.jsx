@@ -2,10 +2,60 @@
 import { useTranslation } from 'react-i18next'; // Ajout de useTranslation
 import Button from "../components/Button";
 import { FaAt, FaGithub, FaLinkedin, FaWhatsapp, FaMap, FaMapMarkerAlt } from "react-icons/fa";
+import toast from 'react-hot-toast';
+import { useState } from 'react';
 
 function Contact() {
   const { t } = useTranslation(); // Ajout du hook de traduction
 
+  const [isSending, setIsSending] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSending(true);
+    
+    // Afficher un toast de chargement avec traduction
+    const loadingToast = toast.loading(t('contact.toasts.sending'));
+
+    const form = e.target;
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch("https://formspree.io/f/mojpbkdy", {
+        method: "POST",
+        body: data,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        // Succès
+        toast.success(t('contact.toasts.success'), {
+          id: loadingToast,
+          duration: 4000,
+       
+        });
+        form.reset();
+      } else {
+        // Erreur
+        toast.error(t('contact.toasts.error'), {
+          id: loadingToast,
+          duration: 4000,
+       
+        });
+      }
+    } catch (error) {
+      // Erreur réseau
+      toast.error(t('contact.toasts.networkError'), {
+        id: loadingToast,
+        duration: 4000,
+     
+      });
+    } finally {
+      setIsSending(false);
+    }
+  };
   return (
     <div className="contact">
       <div className="contact_dec">
@@ -46,7 +96,7 @@ function Contact() {
 
         {/* Formulaire */}
         <div>
-          <form action="" className="form">
+          <form onSubmit={handleSubmit} className="form" >
             <div>
               <div>
                 <label htmlFor="name">{t('contact.yourName')}</label>
@@ -54,6 +104,7 @@ function Contact() {
                   type="text" 
                   id="name" 
                   placeholder={t('contact.placeholders.name')} 
+                  name='name'
                 />
               </div>
               <div>
@@ -62,6 +113,7 @@ function Contact() {
                   type="email" 
                   id="email" 
                   placeholder={t('contact.placeholders.email')} 
+                  name='email'
                 />
               </div>
             </div>
@@ -71,15 +123,17 @@ function Contact() {
               type="text" 
               id="projectType" 
               placeholder={t('contact.placeholders.projectType')} 
+              name='project_type'
             />
 
             <label htmlFor="message">{t('contact.yourMessage')}</label>
             <textarea 
               id="message" 
               placeholder={t('contact.placeholders.message')}
+              name='message'
             ></textarea>
 
-            <Button size="medium">{t('contact.sendMessage')}</Button>
+            <Button size="medium" type='submit'>{t('contact.sendMessage')}</Button>
           </form>
         </div>
 

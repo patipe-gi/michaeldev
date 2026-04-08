@@ -104,6 +104,12 @@
     }
   },
   "contact": {
+     "toasts": {
+      "sending": "Sending message...",
+      "success": "Message sent successfully! ",
+      "error": "Error sending message ",
+      "networkError": "Connection error. Please check your network"
+    },
     "title": "LET'S BUILD SOMETHING",
     "together": "TOGETHER",
     "description": "You have a question, a project in mind, or just want to connect? I'd be happy to hear from you — feel free to reach out anytime.",

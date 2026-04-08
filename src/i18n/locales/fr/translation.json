@@ -107,6 +107,12 @@
   },
 
   "contact": {
+    "toasts": {
+      "sending": "Envoi du message en cours...",
+      "success": "Message envoyé avec succès ! ",
+      "error": "Erreur lors de l'envoi du message ",
+      "networkError": "Erreur de connexion. Vérifie ton réseau "
+    },
     "title": "CRÉONS QUELQUE CHOSE",
     "together": "ENSEMBLE",
     "description": "Vous avez une question, un projet en tête ou simplement envie d'échanger ? Je serais ravi de vous entendre — n'hésitez pas à me contacter à tout moment.",
