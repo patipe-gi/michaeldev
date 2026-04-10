@@ -1,4 +1,6 @@
-/* Header.css */
+/* ============================================
+   DESKTOP HEADER (inchangé)
+   ============================================ */
 .nav {
   position: fixed;
   top: 0;
@@ -16,7 +18,6 @@
   transition: all 0.3s ease;
 }
 
-/* Logo container */
 .logo-d {
   display: flex;
   align-items: center;
@@ -34,7 +35,6 @@
   transform: scale(1.05);
 }
 
-/* Desktop navigation */
 .hd-item {
   display: flex;
   align-items: center;
@@ -52,7 +52,6 @@
   padding: 0.5rem 0;
 }
 
-/* Underline animation */
 .hd-item a::after {
   content: '';
   position: absolute;
@@ -60,7 +59,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(135deg, #18c5a4);
+  background: #18c5a4;
   transition: width 0.3s ease;
 }
 
@@ -77,166 +76,12 @@
   color: #18c5a4;
 }
 
-/* Bouton Hire Me */
 .nav .btn-outline {
   padding: 0.5rem 1.5rem;
   font-size: 0.875rem;
   z-index: 1001;
 }
 
-/* Menu burger pour mobile */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 21px;
-  cursor: pointer;
-  z-index: 1001;
-  background: transparent;
-  border: none;
-}
-
-.menu-toggle span {
-  width: 100%;
-  height: 3px;
-  background: #18c5a4;
-  border-radius: 3px;
-  transition: all 0.3s ease;
-}
-
-.menu-toggle.active span:nth-child(1) {
-  transform: translateY(9px) rotate(45deg);
-}
-
-.menu-toggle.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.menu-toggle.active span:nth-child(3) {
-  transform: translateY(-9px) rotate(-45deg);
-}
-
-/* Overlay pour mobile */
-.mobile-overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(5px);
-  z-index: 998;
-}
-
-.mobile-overlay.open {
-  display: block;
-}
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .nav {
-    padding: 0 4%;
-  }
-  
-  .hd-item {
-    gap: 1.5rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .nav {
-    height: 65px;
-    padding: 0 5%;
-  }
-  
-  /* Cacher le menu desktop */
-  .hd-item {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 70%;
-    max-width: 300px;
-    height: 100vh;
-    background: rgba(28, 32, 44, 0.98);
-    backdrop-filter: blur(20px);
-    flex-direction: column;
-    justify-content: center;
-    gap: 2rem;
-    transition: right 0.3s ease;
-    z-index: 999;
-    padding: 2rem;
-    border-left: 1px solid rgba(24, 197, 164, 0.2);
-  }
-  
-  .hd-item.open {
-    right: 0;
-  }
-  
-  .hd-item a {
-    font-size: 1.1rem;
-    width: 100%;
-    text-align: center;
-    padding: 0.75rem;
-  }
-  
-  /* Menu burger button */
-  .menu-toggle {
-    display: flex;
-  }
-  
-  /* Cacher le bouton Hire Me dans le header sur mobile */
-  .nav > .btn-outline {
-    display: none;
-  }
-  
-  /* Ajouter le bouton dans le menu mobile */
-  .hd-item .mobile-hire-btn {
-    display: block;
-    margin-top: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .nav {
-    height: 60px;
-    padding: 0 4%;
-  }
-  
-  .logo {
-    height: 60px;
-    width: 60px;
-    margin: 0 1.5rem;
-  }
-  
-  .hd-item {
-    width: 85%;
-    gap: 1.5rem;
-  }
-  
-  .hd-item a {
-    font-size: 1rem;
-    padding: 0.6rem;
-  }
-}
-
-/* Animation d'entrée pour le menu mobile */
-@keyframes slideIn {
-  from {
-    right: -100%;
-  }
-  to {
-    right: 0;
-  }
-}
-
-.hd-item.open {
-  animation: slideIn 0.3s ease-out;
-}
-/* Header.css - Ajoutez ceci à la fin du fichier */
-
-/* Zone droite du header (desktop) */
 .header-right {
   display: flex;
   align-items: center;
@@ -244,67 +89,178 @@
   z-index: 1001;
 }
 
-/* Language Switcher desktop */
-.header-right .language-switcher {
-  margin-right: 0.5rem;
-}
-
-/* Language Switcher mobile */
-.mobile-lang-wrapper {
+/* ============================================
+   MOBILE HEADER (simplifié)
+   ============================================ */
+.mobile-header {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  margin: 1rem 0 0.5rem 0;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(24, 197, 164, 0.2);
+  height: 60px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  background: rgba(28, 32, 44, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid rgba(33, 57, 90, 0.5);
+  z-index: 1000;
+  transition: all 0.3s ease;
 }
 
-/* Ajustement de l'ordre dans le menu mobile */
-.hd-item {
+.mobile-header .logo-d .logo {
+  height: 5rem;
+  width: 5rem;
+}
+
+/* ============================================
+   MOBILE BOTTOM NAVIGATION BAR
+   ============================================ */
+.mobile-bottom-nav {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: rgba(28, 32, 44, 0.98);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(24, 197, 164, 0.2);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 8px 12px;
+  z-index: 1000;
+}
+
+.bottom-nav-item {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: #a0a0a0;
+  text-decoration: none;
+  font-size: 0.7rem;
+  transition: all 0.2s ease;
+  padding: 6px 12px;
+  /* border-radius: 20px; */
 }
 
-/* Sur desktop, le menu est horizontal */
-@media (min-width: 769px) {
-  .hd-item {
-    flex-direction: row;
-  }
-  
-  .mobile-lang-wrapper {
-    display: none;
-  }
+.bottom-nav-item svg {
+  width: 22px;
+  height: 22px;
+  transition: all 0.2s ease;
 }
 
-/* Sur mobile, cacher le header-right */
+.bottom-nav-item span {
+  font-size: 0.65rem;
+  font-weight: 500;
+}
+
+.bottom-nav-item:hover {
+  color: #18c5a4;
+}
+
+.bottom-nav-item.active {
+  color: #18c5a4;
+}
+
+.bottom-nav-item.active svg {
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+/* Mobile (max-width: 768px) */
 @media (max-width: 768px) {
-  .header-right {
+  /* Cacher le desktop header */
+  .desktop-nav {
     display: none;
   }
+  .footer{
+    display: none!important;
+  }
   
-  .mobile-lang-wrapper {
+  /* Afficher le mobile header */
+  .mobile-header {
     display: flex;
   }
+  
+  /* Afficher la bottom navigation */
+  .mobile-bottom-nav {
+    display: flex;
+  }
+  
+  /* Ajuster le padding du body pour ne pas cacher le contenu */
+  body {
+    padding-top: 60px;
+    padding-bottom: 70px;
+  }
 }
 
-/* Ajustement du bouton Hire Me dans le menu mobile */
-.hd-item .mobile-hire-btn {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  width: 100%;
-}
-
-/* Position du LanguageSwitcher dans le header desktop */
+/* Desktop (min-width: 769px) */
 @media (min-width: 769px) {
-  .header-right {
-    order: 2;
+  .desktop-nav {
+    display: flex;
   }
   
-  .hd-item {
-    order: 1;
+  .mobile-header {
+    display: none;
   }
   
-  .logo-d {
-    order: 0;
+  .mobile-bottom-nav {
+    display: none;
+  }
+  
+  body {
+    padding-top: 70px;
+    padding-bottom: 0;
+  }
+}
+
+/* Small mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .mobile-header {
+    height: 55px;
+    padding: 0 4%;
+  }
+  
+  .mobile-header .logo-d .logo {
+    height: 5rem;
+    width: 5rem;
+    margin: 5px;
+  }
+  
+  .mobile-bottom-nav {
+    height: 65px;
+    padding: 5px 8px;
+  }
+  
+  .bottom-nav-item {
+    padding: 4px 8px;
+  }
+  
+  .bottom-nav-item svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .bottom-nav-item span {
+    font-size: 0.6rem;
+  }
+  
+  body {
+    padding-top: 55px;
+    padding-bottom: 65px;
+  }
+}
+
+/* Desktop language switcher text */
+@media (min-width: 1288px) {
+  .lang-text {
+    display: inline-block;
   }
 }
