@@ -164,6 +164,7 @@
 
 .bottom-nav-item.active {
   color: #18c5a4;
+  border-bottom: 0;
 }
 
 .bottom-nav-item.active svg {
