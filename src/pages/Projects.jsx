@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom'; // ← Ajout de Link
 import FilterSection from '../components/FilterSection';
 import { useFilterProjects } from '../hooks/useFilterProjects';
 import { useTranslatedProjects } from '../hooks/useTranslatedProjects';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaGithub, FaInfoCircle } from 'react-icons/fa';
 import Button from '../components/Button';
 import Loader from '../components/Loader';
 
@@ -18,7 +19,6 @@ const Projects = () => {
   };
 
   useEffect(() => {
-    // Attendre que les projets soient chargés et traduits
     if (translatedProjects && translatedProjects.length > 0) {
       setLoading(false);
     }
@@ -68,11 +68,14 @@ const Projects = () => {
                 </div>
                 
                 <div className="project-links">
-                  <a href={project.demoLink} target="_blank" rel="noopener noreferrer">
+                  {/* Link React Router pour la navigation interne */}
+                  <Link to={`/project/${project.id}`}>
                     <Button size='small'> 
-                      <FaExternalLinkAlt /> {t('projects.liveDemo')}
+                      <FaInfoCircle /> {t('projects.viewDetails')}
                     </Button>
-                  </a>
+                  </Link>
+                  
+                  {/* Lien externe pour GitHub */}
                   <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
                     <Button className='btn-outline' size='small'> 
                       <FaGithub /> {t('projects.code')}

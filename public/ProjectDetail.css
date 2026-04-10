@@ -1,0 +1,627 @@
+/* src/pages/ProjectDetail.css */
+.project-detail {
+  padding-top: 60px;
+  min-height: 100vh;
+}
+
+/* Fil d'Ariane */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  font-size: 0.875rem;
+  color: #a0a0a0;
+}
+
+.breadcrumb a {
+  color: #a0a0a0;
+  transition: color 0.3s;
+}
+
+.breadcrumb a:hover {
+  color: #18c5a4;
+}
+
+.breadcrumb .current {
+  color: #18c5a4;
+}
+
+/* Bannière */
+.project-banner {
+  width: 100%;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(24, 197, 164, 0.2);
+}
+
+.project-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* En-tête */
+.project-header-detail {
+  margin-bottom: 3rem;
+}
+
+.project-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #18c5a4, #9747ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.project-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #a0a0a0;
+  font-size: 0.9rem;
+}
+
+.meta-icon {
+  color: #18c5a4;
+}
+
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Sections */
+.detail-section {
+  margin-bottom: 3rem;
+  background: linear-gradient(135deg, #19212e, #171f2b);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  position: relative;
+}
+
+.detail-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  padding: 1px;
+  background: linear-gradient(135deg, #18c5a4, #9747ff);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #18c5a4;
+}
+
+.section-content {
+  color: #c0c0c0;
+}
+
+/* Objectifs */
+.objectives-list h4 {
+  color: #18c5a4;
+  margin-bottom: 0.75rem;
+}
+
+.objectives-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.objectives-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.check-icon {
+  color: #18c5a4;
+}
+
+/* Features grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.feature-card {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: rgba(24, 197, 164, 0.05);
+  border-radius: 0.5rem;
+}
+
+.feature-icon {
+  color: #18c5a4;
+  flex-shrink: 0;
+}
+
+/* Architecture */
+.arch-type {
+  margin-bottom: 1rem;
+}
+
+.arch-diagram {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.arch-image {
+  max-width: 100%;
+  border-radius: 0.5rem;
+}
+
+.stack-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.stack-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  border-bottom: 1px solid rgba(24, 197, 164, 0.1);
+}
+
+.stack-label {
+  color: #18c5a4;
+  font-weight: 500;
+}
+
+.stack-value {
+  color: white;
+}
+
+/* Technologies */
+.tech-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.tech-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 0.75rem;
+  padding: 1rem;
+}
+
+.tech-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.tech-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.tech-name {
+  color: #18c5a4;
+  font-size: 1.1rem;
+}
+
+.tech-reason {
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+/* Diagramme de classes */
+.class-diagram {
+  text-align: center;
+}
+
+.class-diagram-image {
+  max-width: 100%;
+  border-radius: 0.5rem;
+}
+
+/* Défis techniques */
+.challenge-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.challenge-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.challenge-icon {
+  color: #f59e0b;
+}
+
+.challenge-title h3 {
+  color: white;
+  margin: 0;
+}
+
+.challenge-desc {
+  color: #a0a0a0;
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+}
+
+.solution-box {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: rgba(24, 197, 164, 0.1);
+  border-radius: 0.5rem;
+  margin-left: 1.5rem;
+}
+
+.solution-label {
+  color: #18c5a4;
+  font-weight: bold;
+}
+
+.solution-text {
+  color: white;
+}
+
+/* Galerie */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-item {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: 1px solid rgba(24, 197, 164, 0.2);
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.gallery-item:hover {
+  transform: scale(1.02);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+/* Résultats */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.metric-card {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(24, 197, 164, 0.05);
+  border-radius: 0.75rem;
+}
+
+.metric-value {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #18c5a4;
+}
+
+.metric-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #a0a0a0;
+}
+
+.metric-change {
+  display: inline-block;
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  color: #18c5a4;
+}
+
+.testimonial {
+  padding: 1rem;
+  border-left: 3px solid #18c5a4;
+  background: rgba(24, 197, 164, 0.05);
+  border-radius: 0.5rem;
+}
+
+.testimonial-text {
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.testimonial-author {
+  color: #18c5a4;
+  font-size: 0.85rem;
+}
+
+/* Bouton retour */
+.back-button {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .project-detail {
+    padding-top: 30px;
+  }
+  
+  .project-title {
+    font-size: 1.8rem;
+  }
+  
+  .section-title {
+    font-size: 1.2rem;
+  }
+  
+  .tech-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .project-actions {
+    flex-direction: column;
+  }
+  
+  .stack-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .project-meta {
+    gap: 0.75rem;
+  }
+  
+  .meta-item {
+    font-size: 0.75rem;
+  }
+}
+
+/* Page d'erreur */
+.project-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+  padding: 2rem;
+}
+
+.error-icon {
+  font-size: 4rem;
+  color: #ef4444;
+  margin-bottom: 1rem;
+}
+
+.project-error h2 {
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.project-error p {
+  color: #a0a0a0;
+  margin-bottom: 1.5rem;
+}
+
+/* ProjectDetail.css - Ajoutez/modifiez ces styles */
+
+/* Section title avec icône */
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #18c5a4;
+}
+
+.section-icon {
+  font-size: 1.5rem;
+}
+
+/* Fil d'Ariane avec icônes */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  font-size: 0.875rem;
+  color: #a0a0a0;
+}
+
+.breadcrumb a {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #a0a0a0;
+  transition: color 0.3s;
+}
+
+.breadcrumb a:hover {
+  color: #18c5a4;
+}
+
+.breadcrumb-icon {
+  font-size: 0.75rem;
+}
+
+/* Objectifs titre avec icône */
+.objectives-list h4 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #18c5a4;
+  margin-bottom: 0.75rem;
+}
+
+.title-icon {
+  font-size: 1rem;
+}
+
+/* Stack items avec icônes */
+.stack-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  border-bottom: 1px solid rgba(24, 197, 164, 0.1);
+}
+
+.stack-icon {
+  color: #18c5a4;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.stack-label {
+  font-weight: 500;
+  min-width: 100px;
+}
+
+.stack-value {
+  color: white;
+}
+
+/* Architecture type */
+.arch-type {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.arch-icon {
+  color: #18c5a4;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.2rem;
+  }
+  
+  .section-icon {
+    font-size: 1.2rem;
+  }
+  
+  .stack-item {
+    flex-wrap: wrap;
+  }
+  
+  .stack-label {
+    min-width: auto;
+  }
+}
+
+/* ProjectDetail.css - Ajoutez ces styles */
+
+/* Overlay pour les images cliquables */
+.project-banner {
+  position: relative;
+  cursor: pointer;
+}
+
+.banner-overlay,
+.diagram-overlay,
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: white;
+  border-radius: inherit;
+}
+
+.project-banner:hover .banner-overlay,
+.class-diagram.clickable:hover .diagram-overlay,
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.expand-icon {
+  font-size: 2rem;
+}
+
+.banner-overlay span,
+.diagram-overlay span {
+  font-size: 0.875rem;
+}
+
+.class-diagram.clickable {
+  position: relative;
+  cursor: pointer;
+}
+
+.gallery-item {
+  position: relative;
+  cursor: pointer;
+}
+
+.gallery-overlay {
+  border-radius: 0.5rem;
+}
+
+.gallery-overlay .expand-icon {
+  font-size: 1.5rem;
+}

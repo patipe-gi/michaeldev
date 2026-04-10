@@ -99,7 +99,7 @@ function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="about" element={<About />} />
             <Route path="contact" element={<Contact />} />
-            <Route path="projectDetail" element={<ProjectDetail />} />
+            <Route path="project/:id" element={<ProjectDetail />} />
             <Route path="skills" element={<Skills />} />
             <Route path="*" element={<NotFound />} />
           </Route>
