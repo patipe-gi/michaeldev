@@ -4,7 +4,7 @@ export const projects = [
   id: 1,
   name: "E-Commerce Multi-boutique",
   shortDescription: "Plateforme e-commerce multi-vendeurs avec système de paiement mobile et gestion centralisée.",
-  image: "/image/project/ecomerce2.jpg",
+  image: "/image/project/e-commerce2.webp",
   tags: ["Laravel",  "MySQL", "Bootstrap", ],
   category: "e-commerce",
   year: "2024",

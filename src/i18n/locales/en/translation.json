@@ -220,6 +220,125 @@
     "autoReload": "The page will reload automatically once you are back online.",
     "autoRetry": "Auto retry in 5s",
     "retryingIn": "Retrying in {{seconds}}s"
+  },
+  
+  "projectDetail": {
+    "backToProjects": "Back to Projects",
+    "viewDemo": "Live Demo",
+    "sourceCode": "Source Code",
+    "documentation": "Documentation",
+    "expand": "Expand",
+    "clickToExpand": "Click to expand",
+    "screenshot": "Screenshot",
+    "error": {
+      "notFoundMessage": "The project you are looking for does not exist or has been moved."
+    },
+    "sections": {
+      "context": "Context & Problem",
+      "solution": "Solution",
+      "architecture": "Technical Architecture",
+      "technologies": "Technologies Used",
+      "classDiagram": "Class Diagram",
+      "challenges": "Technical Challenges & Solutions",
+      "gallery": "Image Gallery",
+      "results": "Results & Impact"
+    },
+    "context": {
+      "objectives": "Project Objectives"
+    },
+    "architecture": {
+      "type": "Type",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Database",
+      "cache": "Cache",
+      "payment": "Payment",
+      "notUsed": "Not used"
+    },
+    "challenges": {
+      "solution": "Solution"
+    },
+    "projects": {
+      "1": {
+        "name": "E-Commerce Multi-store",
+        "year": "2024",
+        "category": "E-Commerce",
+        "role": "Full Stack Developer",
+        "context": {
+          "company": "Defense Project - Laravel Training",
+          "problem": "Small businesses and local merchants had no online solution to sell their products. Each seller had to manage their inventory manually, and there was no unified platform to centralize sales and payments.",
+          "objectives": [
+            "Create a platform where multiple sellers can open their online stores",
+            "Centralize product and order management",
+            "Integrate a mobile payment system (Monetbile)",
+            "Provide an admin dashboard to oversee all stores"
+          ]
+        },
+        "solution": {
+          "description": "Development of a multi-vendor e-commerce platform with Laravel (MVC), allowing each merchant to manage their own store while sharing a common infrastructure. The system includes a payment module via Monetbile API to facilitate local transactions.",
+          "features": [
+            "Create and manage individual stores",
+            "Complete product management (CRUD)",
+            "Shopping cart system",
+            "Monetbile API integration",
+            "Admin dashboard with statistics",
+            "Order and delivery management",
+            "Multi-role authentication system (Admin, Seller, Customer)"
+          ]
+        },
+        "architecture": {
+          "type": "MVC Architecture (Model-View-Controller)",
+          "schema": {
+            "frontend": "HTML5, CSS3, Bootstrap, JavaScript, Blade (Laravel)",
+            "backend": "Laravel (PHP 8), WampServer",
+            "database": "MySQL (phpMyAdmin)",
+            "payment": "Monetbile API",
+            "server": "Apache (via WampServer)"
+          }
+        },
+        "technologies": [
+          { "name": "Laravel", "reason": "Robust MVC framework with excellent route management and Eloquent ORM." },
+          { "name": "PHP", "reason": "Powerful backend language widely used for web development." },
+          { "name": "MySQL", "reason": "Reliable relational database to manage users, products, and orders." },
+          { "name": "Bootstrap", "reason": "CSS framework for a responsive and modern interface, easy to integrate." },
+          { "name": "HTML5", "reason": "Semantic and accessible structure for web pages." },
+          { "name": "CSS3", "reason": "Modern styles and animations for a pleasant user experience." },
+          { "name": "JavaScript", "reason": "Interactivity and dynamism on the client side." },
+          { "name": "Git", "reason": "Version control and efficient collaboration." },
+          { "name": "Monetbile", "reason": "Cameroonian mobile payment API integrated for local transactions." }
+        ],
+        "challenges": [
+          {
+            "title": "Multi-seller session management",
+            "description": "How to allow multiple sellers to manage their products without interfering with each other?",
+            "solution": "Implementation of a multi-role authentication system with Laravel middleware, filtering data by 'vendor_id' for each request."
+          },
+          {
+            "title": "Monetbile API Integration",
+            "description": "The Monetbile API was not clearly documented and required testing in a real environment.",
+            "solution": "Use of a test sandbox provided by the operator, then simulation with test accounts before deployment."
+          },
+          {
+            "title": "MySQL Query Optimization",
+            "description": "The admin dashboard became slow as the number of orders increased.",
+            "solution": "Query optimization with JOINs and indexing of the most used columns (user_id, product_id, order_date)."
+          }
+        ],
+        "results": {
+          "metrics": [
+            { "label": "Defense Grade", "value": "Excellent", "change": "Excellent Mention" },
+            { "label": "Development Time", "value": "3 months", "change": "Respected" },
+            { "label": "Supported Sellers", "value": "Unlimited", "change": "Multi-store" }
+          ],
+          "testimonial": {
+            "text": "This project allowed me to master MVC architecture with Laravel and integrate mobile money payments, a key skill for the local market.",
+            "author": "Michael Patipe",
+            "position": "Full Stack Developer"
+          }
+        }
+      }
+    }
   }
+
 
 }

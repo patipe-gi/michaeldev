@@ -221,6 +221,125 @@
     "autoReload": "La page se rechargera automatiquement dès que tu seras de nouveau en ligne.",
     "autoRetry": "Réessai automatique dans 5s",
     "retryingIn": "Réessai dans {{seconds}}s"
+  },
+  
+  "projectDetail": {
+    "backToProjects": "Retour aux projets",
+    "viewDemo": "Voir la démo",
+    "sourceCode": "Code source",
+    "documentation": "Documentation",
+    "expand": "Agrandir",
+    "clickToExpand": "Cliquer pour agrandir",
+    "screenshot": "Capture d'écran",
+    "error": {
+      "notFoundMessage": "Le projet que vous recherchez n'existe pas ou a été déplacé."
+    },
+    "sections": {
+      "context": "Contexte & Problématique",
+      "solution": "Solution apportée",
+      "architecture": "Architecture technique",
+      "technologies": "Technologies utilisées",
+      "classDiagram": "Diagramme de classes",
+      "challenges": "Défis techniques & Solutions",
+      "gallery": "Galerie d'images",
+      "results": "Résultats & Impact"
+    },
+    "context": {
+      "objectives": "Objectifs du projet"
+    },
+    "architecture": {
+      "type": "Type",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Base de données",
+      "cache": "Cache",
+      "payment": "Paiement",
+      "notUsed": "Non utilisé"
+    },
+    "challenges": {
+      "solution": "Solution"
+    },
+    "projects": {
+      "1": {
+        "name": "E-Commerce Multi-boutique",
+        "year": "2024",
+        "category": "E-Commerce",
+        "role": "Développeur Full Stack",
+        "context": {
+          "company": "Projet de soutenance - Formation Laravel",
+          "problem": "Les petites entreprises et commerçants locaux n'avaient pas de solution en ligne pour vendre leurs produits. Chaque vendeur devait gérer ses stocks manuellement, et il n'existait pas de plateforme unifiée pour centraliser les ventes et les paiements.",
+          "objectives": [
+            "Créer une plateforme où plusieurs vendeurs peuvent ouvrir leur boutique en ligne",
+            "Centraliser la gestion des produits et des commandes",
+            "Intégrer un système de paiement mobile (Monetbile)",
+            "Fournir un dashboard administrateur pour superviser toutes les boutiques"
+          ]
+        },
+        "solution": {
+          "description": "Développement d'une plateforme e-commerce multi-vendeurs avec Laravel (MVC), permettant à chaque commerçant de gérer sa propre boutique tout en partageant une infrastructure commune. Le système intègre un module de paiement via API Monetbile pour faciliter les transactions locales.",
+          "features": [
+            "Création et gestion de boutiques individuelles",
+            "Gestion des produits (CRUD complet)",
+            "Système de panier d'achat",
+            "Intégration API Monetbile",
+            "Dashboard administrateur avec statistiques",
+            "Gestion des commandes et livraisons",
+            "Système d'authentification multi-rôles (Admin, Vendeur, Client)"
+          ]
+        },
+        "architecture": {
+          "type": "Architecture MVC (Modèle-Vue-Contrôleur)",
+          "schema": {
+            "frontend": "HTML5, CSS3, Bootstrap, JavaScript, Blade (Laravel)",
+            "backend": "Laravel (PHP 8), WampServer",
+            "database": "MySQL (phpMyAdmin)",
+            "payment": "API Monetbile",
+            "server": "Apache (via WampServer)"
+          }
+        },
+        "technologies": [
+          { "name": "Laravel", "reason": "Framework MVC robuste avec une excellente gestion des routes et de l'ORM Eloquent." },
+          { "name": "PHP", "reason": "Langage backend puissant et largement utilisé pour le développement web." },
+          { "name": "MySQL", "reason": "Base de données relationnelle fiable pour gérer les utilisateurs, produits et commandes." },
+          { "name": "Bootstrap", "reason": "Framework CSS pour une interface responsive et moderne, facile à intégrer." },
+          { "name": "HTML5", "reason": "Structure sémantique et accessible pour les pages web." },
+          { "name": "CSS3", "reason": "Styles modernes et animations pour une expérience utilisateur agréable." },
+          { "name": "JavaScript", "reason": "Interactivité et dynamisme côté client." },
+          { "name": "Git", "reason": "Gestion de versions et collaboration efficace." },
+          { "name": "Monetbile", "reason": "API de paiement mobile camerounaise intégrée pour les transactions locales." }
+        ],
+        "challenges": [
+          {
+            "title": "Gestion des sessions multi-vendeurs",
+            "description": "Comment permettre à plusieurs vendeurs de gérer leurs produits sans interférer entre eux ?",
+            "solution": "Mise en place d'un système d'authentification multi-rôles avec middleware Laravel, filtrant les données par 'vendor_id' pour chaque requête."
+          },
+          {
+            "title": "Intégration API Monetbile",
+            "description": "L'API Monetbile n'était pas documentée clairement et nécessitait des tests en environnement réel.",
+            "solution": "Utilisation d'un sandbox de test fourni par l'opérateur, puis simulation avec des comptes de test avant le déploiement."
+          },
+          {
+            "title": "Optimisation des requêtes MySQL",
+            "description": "Le dashboard admin devenait lent avec l'augmentation du nombre de commandes.",
+            "solution": "Optimisation des requêtes avec des jointures (JOIN) et indexation des colonnes les plus utilisées (user_id, product_id, order_date)."
+          }
+        ],
+        "results": {
+          "metrics": [
+            { "label": "Note de soutenance", "value": "Excellent", "change": "Mention Excellent" },
+            { "label": "Temps de développement", "value": "3 mois", "change": "Respecté" },
+            { "label": "Vendeurs supportés", "value": "Illimité", "change": "Multi-boutique" }
+          ],
+          "testimonial": {
+            "text": "Ce projet m'a permis de maîtriser l'architecture MVC avec Laravel et d'intégrer des paiements mobile money, une compétence clé pour le marché local.",
+            "author": "Michael Patipe",
+            "position": "Développeur Full Stack"
+          }
+        }
+      }
+    }
   }
+
 
 }

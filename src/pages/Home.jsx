@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { useTranslatedProjects } from '../hooks/useTranslatedProjects'; // Import du hook
 import Button from "../components/Button";
 import { Link } from "react-router-dom";
-import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import { FaExternalLinkAlt, FaGithub, FaInfoCircle } from "react-icons/fa";
 import skill from "../../public/image/Gemini_Generated_Image_gqywl6gqywl6gqyw.png";
 import prof_image from "../../public/image/Gemini_Generated_Image_srx4i4srx4i4srx4.png";
 import CVDownload from "../components/CVDownload";
@@ -101,11 +101,11 @@ function Home() {
                 </div>
                 
                 <div className="project-links">
-                  <a href={project.demoLink} target="_blank" rel="noopener noreferrer">
+                  <Link  to={`/project/${project.id}`}>
                     <Button size='small'> 
-                      <FaExternalLinkAlt /> {t('home.liveDemo')}
+                      <FaInfoCircle /> {t('projects.viewDetails')}
                     </Button>
-                  </a>
+                  </Link>
                   <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
                     <Button className='btn-outline' size='small'> 
                       <FaGithub /> {t('home.code')}
