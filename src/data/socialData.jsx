@@ -15,9 +15,9 @@ import { FaAt, FaEnvelope, FaGithub, FaLinkedin, FaTwitter, FaWhatsapp } from "r
                 ariaLabel:'Envoyer un message'
     
             },
-                { platform: "Twitter",
-                     icon: <FaTwitter />, 
-                     url: "https://twitter.com/" },
+                // { platform: "Twitter",
+                //      icon: <FaTwitter />, 
+                //      url: "https://twitter.com/" },
             
                {
                 platform:'Linkedin',
