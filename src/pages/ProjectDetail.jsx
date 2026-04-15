@@ -97,6 +97,11 @@ const ProjectDetail = () => {
                 <Button size="medium" variant="outline" icon={<FaGithub />}>{t('projectDetail.sourceCode')}</Button>
               </a>
             )}
+             {project.links?.demo&& (
+              <a href={project.links.demo} target="_blank" rel="noopener noreferrer">
+                <Button size="medium" variant="outline" icon={<FaExternalLinkAlt />}>{t('projectDetail.viewDemo')}</Button>
+              </a>
+            )}
           </div>
         </div>
 

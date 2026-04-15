@@ -61,7 +61,7 @@
     "code": "Code",
     "items": {
       "ecommercePro": {
-        "name": "E-Commerce Pro",
+        "name": "ECOMARKET",
         "description": "Complete e-commerce platform with shopping cart, secure payment, and admin dashboard."
       },
       "taskflow": {
@@ -260,7 +260,7 @@
     },
     "projects": {
       "1": {
-        "name": "E-Commerce Multi-store",
+        "name": "E-Commerce Multi-store(ECOMARKET)",
         "year": "2024",
         "category": "E-Commerce",
         "role": "Full Stack Developer",

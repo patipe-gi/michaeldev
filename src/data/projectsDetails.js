@@ -2,7 +2,7 @@
 export const projectsDetails = {
   1: {
     id: 1,
-    bannerImage: "/image/project/e-commerce2.webp",
+    bannerImage: "/image/project/e-commerce2.png",
     architecture: {
       diagram: "/image/mvc.png"
     },
@@ -19,7 +19,7 @@ export const projectsDetails = {
     ],
     classDiagram: {
       type: "image",
-      content: "/image/project/ecommerce/class-diagram.png",
+      content: "/image/project/ecomarket_diagram.png",
       alt: "Diagramme de classes UML"
     },
     gallery: [
@@ -29,7 +29,7 @@ export const projectsDetails = {
       "/image/project/ecommerce/screen-paiement.jpg"
     ],
     links: {
-      demo: "https://ecommerce-multi-boutique.demo.com",
+      demo: "https://ecomarket.kesug.com/",
       github: "https://github.com/username/ecommerce-multi-boutique",
       documentation: ""
     }

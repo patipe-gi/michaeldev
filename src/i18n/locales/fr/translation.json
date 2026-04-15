@@ -63,7 +63,7 @@
     "code": "Code source",
     "items": {
       "ecommercePro": {
-        "name": "E-Commerce Pro",
+        "name": "ECOMARKET",
         "description": "Plateforme e-commerce complète avec panier d'achat, paiement sécurisé et tableau de bord administrateur."
       },
       "taskflow": {
@@ -261,7 +261,7 @@
     },
     "projects": {
       "1": {
-        "name": "E-Commerce Multi-boutique",
+        "name": "E-Commerce Multi-boutique(ECOMARKET)",
         "year": "2024",
         "category": "E-Commerce",
         "role": "Développeur Full Stack",
